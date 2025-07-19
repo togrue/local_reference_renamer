@@ -1,5 +1,6 @@
 import argparse
 import os
+import sys
 from pathlib import Path
 
 import libcst as cst
@@ -121,11 +122,26 @@ def collect_references(root: Path, definitions, module_map, search_paths):
     return refs
 
 
-def apply_renames(root: Path, definitions, refs):
+def apply_renames(root: Path, definitions, refs, dry_run=False):
     """
     Rename any symbol (func or global) with zero external refs.
     Globals are prefixed with '_' and funcs with suffix '_local'.
     """
+    if dry_run:
+        planned = []
+        for (def_path, name, sym_type), occ in refs.items():
+            if occ:
+                continue
+            if name.startswith("_"):
+                continue
+
+            if sym_type == "funcs":
+                new_name = "_" + name
+            else:
+                new_name = "_" + name
+            planned.append((def_path, name, new_name))
+        return planned
+
     proj = rope_project.Project(root.as_posix())
     planned = []
     for (def_path, name, sym_type), occ in refs.items():
@@ -170,9 +186,11 @@ def main():
     p.add_argument("--root", type=Path, required=True)
     p.add_argument("sources", nargs="*", type=Path)
     p.add_argument("--rename-locals", action="store_true")
+    p.add_argument("--dry-run", action="store_true")
     p.add_argument("--verbose", action="store_true")
     p.add_argument("--funcs", action="store_true")
     p.add_argument("--globals", action="store_true")
+    p.add_argument("--warn-unused", action="store_true")
     args = p.parse_args()
 
     root = args.root.resolve()
@@ -194,6 +212,8 @@ def main():
 
     print("Symbol                Type     Module                   External Calls")
     print("------                ----     ------                   --------------")
+
+    unused_symbols_found = False
     for (modpath, name, sym_type), occ in refs.items():
         if modpath not in definitions:
             continue
@@ -203,16 +223,29 @@ def main():
             continue
         tchar = "f" if sym_type == "funcs" else "g"
         print(f"{name:20} {tchar:<4} {modpath.name:25} {len(occ)}")
+
+        # Check for unused symbols
+        if len(occ) == 0:
+            unused_symbols_found = True
+            if args.warn_unused:
+                print(f"  WARNING: {name} has no external references")
+
         if args.verbose:
             for src, line, col in occ:
                 print(f"  -> {src.relative_to(root)}:{line}:{col}")
 
     if args.rename_locals:
-        planned = apply_renames(root, definitions, refs)
-        print("\nRenames planned:")
-        for path, old, new in planned:
-            print(f" - {old} → {new} in {path.relative_to(root)}")
+        planned = apply_renames(root, definitions, refs, dry_run=args.dry_run)
+        if planned:
+            print("\nRenames planned:")
+            for path, old, new in planned:
+                print(f" - {old} -> {new} in {path.relative_to(root)}")
+        else:
+            print("\nNo renames planned.")
+
+    # Exit code: 0 if unused symbols found, 1 otherwise
+    return 0 if unused_symbols_found else 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
