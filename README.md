@@ -2,6 +2,24 @@
 
 A Python tool that analyzes Python codebases to find and optionally rename local-only symbols (functions and global variables that are not used outside their module).
 
+This tool renames local functions and globals to start with an `_`.
+It has helped me a lot in a medium sized stand-alone project with many module-level functions and globals.
+
+As somebody (evetually you?) might find it useful, i put it on github.
+Feedback, suggestions and contributions are really appreciated.
+
+The tool works at the moment for:
+- global functions
+- global variables
+
+But it does not handle:
+- class types (feel free to contribute)
+- class methods
+- class attributes
+- class variables
+
+(As far i can think classes are tricky to implement as python can be very dynamic).
+
 ## Features
 
 - **Symbol Analysis**: Scans Python files to identify functions and global variables

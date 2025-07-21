@@ -167,7 +167,7 @@ class SymbolCollector(cst.CSTVisitor):
 def apply_renames(root: Path, definitions, refs, dry_run=False):
     """
     Rename any symbol (func or global) with zero external refs.
-    Globals are prefixed with '_' and funcs with suffix '_local'.
+    Globals and funcs are prefixed with '_'.
     """
     if dry_run:
         planned = []
