@@ -2,6 +2,9 @@ import argparse
 import os
 import sys
 from pathlib import Path
+from typing import Dict, List, Tuple, Set
+from functools import lru_cache
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import libcst as cst
 from libcst.metadata import MetadataWrapper, PositionProvider, QualifiedNameProvider
@@ -10,19 +13,43 @@ from rope.refactor.rename import Rename
 from tabulate import tabulate
 
 
-def collect_definitions(root: Path, targets):
+@lru_cache(maxsize=1000)
+def parse_module_cached(source: str):
+    """Cache parsed modules to avoid re-parsing the same content."""
+    return cst.parse_module(source)
+
+
+def process_file_for_references(py, defs, module_map, target_module_names):
+    """Process a single file for references - used for parallel processing."""
+    try:
+        source = py.read_text(encoding="utf8")
+        module = parse_module_cached(source)
+        wrapper = MetadataWrapper(module, [QualifiedNameProvider, PositionProvider])
+    except Exception:
+        return []
+
+    collector = SymbolCollector(defs, module_map, py, target_module_names)
+    wrapper.visit(collector)
+    return collector.refs
+
+
+def collect_definitions_and_references(root: Path, targets, search_paths):
     """
-    Collect top-level function and global variable definitions from target files.
+    Collect definitions and references in a single pass to avoid parsing files twice.
     Returns:
       defs: dict {module_path: {'funcs': [names], 'globals': [names]}}
       module_map: dict {module_name: module_path}
+      refs: dict {(def_path, name, sym_type): list of (caller_path, line, col)}
     """
     defs = {}
     module_map = {}
+    refs = {}
+
+    # First pass: collect all definitions from target files
     for py in targets:
         try:
             source = py.read_text(encoding="utf8")
-            module = cst.parse_module(source)
+            module = parse_module_cached(source)
         except Exception:
             continue
         rel = py.relative_to(root).with_suffix("")
@@ -50,22 +77,62 @@ def collect_definitions(root: Path, targets):
                     ):
                         globals_.append(small.target.value)
         defs[py] = {"funcs": funcs, "globals": globals_}
-    return defs, module_map
+
+    # Initialize refs dict
+    refs = {
+        (path, name, sym): []
+        for path, kinds in defs.items()
+        for sym, names in kinds.items()
+        for name in names
+    }
+
+    # Create a set of all target module names for faster lookup
+    target_module_names = set(module_map.keys())
+
+    # Second pass: collect references from all search paths using parallel processing
+    max_workers = min(
+        8, len(search_paths)
+    )  # Limit to 8 workers to avoid overwhelming the system
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # Submit all files for processing
+        future_to_file = {
+            executor.submit(
+                process_file_for_references, py, defs, module_map, target_module_names
+            ): py
+            for py in search_paths
+        }
+
+        # Collect results as they complete
+        for future in as_completed(future_to_file):
+            file_refs = future.result()
+            for def_path, name, sym_type, line, col in file_refs:
+                refs[(def_path, name, sym_type)].append(
+                    (future_to_file[future], line, col)
+                )
+
+    return defs, module_map, refs
 
 
 class SymbolCollector(cst.CSTVisitor):
     METADATA_DEPENDENCIES = (QualifiedNameProvider, PositionProvider)
 
-    def __init__(self, definitions, module_map, current_path):
+    def __init__(self, definitions, module_map, current_path, target_module_names):
         self.definitions = definitions
         self.module_map = module_map
         self.current_path = current_path
+        self.target_module_names = target_module_names
         self.refs = []  # list of (def_path, name, sym_type, line, col)
 
     def _record(self, full: str, pos, sym_type: str):
         if "." not in full:
             return
         mod_name, name = full.rsplit(".", 1)
+
+        # Early exit if module is not in our target modules
+        if mod_name not in self.target_module_names:
+            return
+
         def_path = self.module_map.get(mod_name)
         if not def_path or def_path == self.current_path:
             return
@@ -95,32 +162,6 @@ class SymbolCollector(cst.CSTVisitor):
         qnames = self.get_metadata(QualifiedNameProvider, node.func)
         for qn in qnames:
             self._record(qn.name, pos, "funcs")
-
-
-def collect_references(root: Path, definitions, module_map, search_paths):
-    """
-    Scan all search_paths for references to functions and globals.
-    Returns:
-      refs: dict {(def_path, name, sym_type): list of (caller_path, line, col)}
-    """
-    refs = {
-        (path, name, sym): []
-        for path, kinds in definitions.items()
-        for sym, names in kinds.items()
-        for name in names
-    }
-    for py in search_paths:
-        try:
-            source = py.read_text(encoding="utf8")
-            module = cst.parse_module(source)
-            wrapper = MetadataWrapper(module, [QualifiedNameProvider, PositionProvider])
-        except Exception:
-            continue
-        collector = SymbolCollector(definitions, module_map, py)
-        wrapper.visit(collector)
-        for def_path, name, sym_type, line, col in collector.refs:
-            refs[(def_path, name, sym_type)].append((py, line, col))
-    return refs
 
 
 def apply_renames(root: Path, definitions, refs, dry_run=False):
@@ -204,7 +245,12 @@ def main():
     print(
         f"Scanning {root}\nDefinitions in: {[t.name for t in targets]}\nReferences in {len(all_py)} files...\n"
     )
-    definitions, module_map = collect_definitions(root, targets)
+
+    # Use the optimized combined function
+    definitions, module_map, refs = collect_definitions_and_references(
+        root, targets, all_py
+    )
+
     if show_globals and args.verbose:
         for mod, ks in definitions.items():
             if ks["globals"]:
