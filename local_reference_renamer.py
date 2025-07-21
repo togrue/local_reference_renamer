@@ -283,7 +283,13 @@ def main():
 
     # Print the table using tabulate
     headers = ["Symbol", "Type", "Module", "External Calls"]
-    print(tabulate(table_data, headers=headers, tablefmt="grid"))
+
+    table_output = tabulate(table_data, headers=headers, tablefmt="grid")
+
+    # Print the table linewise to avoid buffering / truncation issues
+    lines = table_output.split("\n")
+    for i, line in enumerate(lines):
+        print(line)
 
     if args.rename_locals:
         planned = apply_renames(root, definitions, refs, dry_run=args.dry_run)
