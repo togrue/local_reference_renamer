@@ -3,8 +3,6 @@ import tempfile
 import sys
 from pathlib import Path
 
-import pytest
-
 
 def test_golden_project_scan(golden_project):
     """Test that the golden project scan works correctly."""
@@ -16,15 +14,11 @@ def test_golden_project_scan(golden_project):
     # Check that we got some output
     assert result["scan_output"], "No scan output produced"
 
-    # Check that the output contains expected headers
-    assert (
-        "Symbol                Type     Module                   External Calls"
-        in result["scan_output"]
-    )
-    assert (
-        "------                ----     ------                   --------------"
-        in result["scan_output"]
-    )
+    # Check that the output contains expected headers (tabulate format)
+    assert "Symbol" in result["scan_output"]
+    assert "Type" in result["scan_output"]
+    assert "Module" in result["scan_output"]
+    assert "External Calls" in result["scan_output"]
 
 
 def test_golden_project_dry_run(golden_project):
@@ -39,11 +33,11 @@ def test_golden_project_dry_run(golden_project):
     # Check that we got some output
     assert result["dry_run_output"], "No dry-run output produced"
 
-    # Check that the output contains expected sections
-    assert (
-        "Symbol                Type     Module                   External Calls"
-        in result["dry_run_output"]
-    )
+    # Check that the output contains expected sections (tabulate format)
+    assert "Symbol" in result["dry_run_output"]
+    assert "Type" in result["dry_run_output"]
+    assert "Module" in result["dry_run_output"]
+    assert "External Calls" in result["dry_run_output"]
 
     # If there are planned renames, they should be listed
     if "Renames planned:" in result["dry_run_output"]:

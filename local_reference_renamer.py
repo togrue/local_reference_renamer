@@ -7,6 +7,7 @@ import libcst as cst
 from libcst.metadata import MetadataWrapper, PositionProvider, QualifiedNameProvider
 from rope.base import project as rope_project
 from rope.refactor.rename import Rename
+from tabulate import tabulate
 
 
 def collect_definitions(root: Path, targets):
@@ -208,12 +209,11 @@ def main():
         for mod, ks in definitions.items():
             if ks["globals"]:
                 print(f"[DEBUG] {mod.name} globals: {ks['globals']}")
-    refs = collect_references(root, definitions, module_map, all_py)
 
-    print("Symbol                Type     Module                   External Calls")
-    print("------                ----     ------                   --------------")
-
+    # Prepare data for tabulate
+    table_data = []
     unused_symbols_found = False
+
     for (modpath, name, sym_type), occ in refs.items():
         if modpath not in definitions:
             continue
@@ -221,8 +221,9 @@ def main():
             continue
         if sym_type == "globals" and not show_globals:
             continue
+
         tchar = "f" if sym_type == "funcs" else "g"
-        print(f"{name:20} {tchar:<4} {modpath.name:25} {len(occ)}")
+        table_data.append([name, tchar, modpath.name, len(occ)])
 
         # Check for unused symbols
         if len(occ) == 0:
@@ -233,6 +234,10 @@ def main():
         if args.verbose:
             for src, line, col in occ:
                 print(f"  -> {src.relative_to(root)}:{line}:{col}")
+
+    # Print the table using tabulate
+    headers = ["Symbol", "Type", "Module", "External Calls"]
+    print(tabulate(table_data, headers=headers, tablefmt="grid"))
 
     if args.rename_locals:
         planned = apply_renames(root, definitions, refs, dry_run=args.dry_run)
