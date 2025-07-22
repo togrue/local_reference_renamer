@@ -3,8 +3,10 @@ import tempfile
 import sys
 from pathlib import Path
 
+from .golden_utils import compare_with_golden
 
-def test_golden_project_scan(golden_project):
+
+def test_golden_project_scan(golden_project, request):
     """Test that the golden project scan works correctly."""
     result = golden_project
 
@@ -14,14 +16,16 @@ def test_golden_project_scan(golden_project):
     # Check that we got some output
     assert result["scan_output"], "No scan output produced"
 
-    # Check that the output contains expected headers (tabulate format)
-    assert "Symbol" in result["scan_output"]
-    assert "Type" in result["scan_output"]
-    assert "Module" in result["scan_output"]
-    assert "External Calls" in result["scan_output"]
+    # Compare with golden file
+    assert compare_with_golden(
+        result["scan_output"],
+        "golden_scan_output.txt",
+        request,
+        "Scan output should match golden file",
+    ), "Scan output does not match golden file"
 
 
-def test_golden_project_dry_run(golden_project):
+def test_golden_project_dry_run(golden_project, request):
     """Test that dry-run mode works correctly."""
     result = golden_project
 
@@ -33,15 +37,26 @@ def test_golden_project_dry_run(golden_project):
     # Check that we got some output
     assert result["dry_run_output"], "No dry-run output produced"
 
-    # Check that the output contains expected sections (tabulate format)
-    assert "Symbol" in result["dry_run_output"]
-    assert "Type" in result["dry_run_output"]
-    assert "Module" in result["dry_run_output"]
-    assert "External Calls" in result["dry_run_output"]
+    # Compare with golden file
+    assert compare_with_golden(
+        result["dry_run_output"],
+        "golden_dry_run_output.txt",
+        request,
+        "Dry-run output should match golden file",
+    ), "Dry-run output does not match golden file"
 
-    # If there are planned renames, they should be listed
-    if "Renames planned:" in result["dry_run_output"]:
-        assert "->" in result["dry_run_output"]
+
+def test_golden_project_commit_hash(golden_project, request):
+    """Test that we're testing against the expected commit hash."""
+    result = golden_project
+
+    # Compare commit hash with golden file
+    assert compare_with_golden(
+        result["commit_hash"],
+        "golden_commit_hash.txt",
+        request,
+        "Commit hash should match golden file",
+    ), "Commit hash does not match golden file"
 
 
 def test_synthetic_project_basic(synthetic_project):

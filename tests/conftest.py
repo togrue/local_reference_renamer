@@ -8,6 +8,16 @@ import sys
 import pytest
 
 
+def pytest_addoption(parser):
+    """Add custom pytest options."""
+    parser.addoption(
+        "--update-golden",
+        action="store_true",
+        default=False,
+        help="Update golden files with current output",
+    )
+
+
 @pytest.fixture
 def temp_dir():
     """Create a temporary directory for tests."""
@@ -16,7 +26,7 @@ def temp_dir():
 
 
 @pytest.fixture
-def golden_project(temp_dir):
+def golden_project(temp_dir, request):
     """
     Clone HDL-FSM-Editor and prepare it for testing.
     Returns a dict with project info and test results.
@@ -84,6 +94,14 @@ def golden_project(temp_dir):
         capture_output=True,
         text=True,
     )
+
+    # Save golden files if requested
+    from .golden_utils import should_update_golden, write_golden_file
+
+    if should_update_golden(request):
+        write_golden_file("golden_scan_output.txt", scan_result.stdout)
+        write_golden_file("golden_dry_run_output.txt", dry_run_result.stdout)
+        write_golden_file("golden_commit_hash.txt", commit_hash)
 
     return {
         "project_dir": project_dir,

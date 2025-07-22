@@ -4,7 +4,8 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Tuple, Set
 from functools import lru_cache
-from concurrent.futures import ThreadPoolExecutor, as_completed
+
+import re
 
 import libcst as cst
 from libcst.metadata import MetadataWrapper, PositionProvider, QualifiedNameProvider
@@ -19,10 +20,33 @@ def parse_module_cached(source: str):
     return cst.parse_module(source)
 
 
-def process_file_for_references(py, defs, module_map, target_module_names):
-    """Process a single file for references - used for parallel processing."""
+def quick_reference_check(source: str, target_module_names: Set[str]) -> bool:
+    """
+    Quick string-based check to see if a file might contain references to our target modules.
+    This avoids expensive LibCST metadata analysis for files that don't need it.
+    """
+    # Use a single pass through the source to check for all patterns
+    for module_name in target_module_names:
+        # Check for imports or qualified name usage in one pass
+        if (
+            f"import {module_name}" in source
+            or f"from {module_name}" in source
+            or f"{module_name}." in source
+        ):
+            return True
+    return False
+
+
+def process_file_for_references_optimized(py, defs, module_map, target_module_names):
+    """Process a single file for references with early filtering."""
     try:
         source = py.read_text(encoding="utf8")
+
+        # Early filtering: skip files that don't contain potential references
+        if not quick_reference_check(source, target_module_names):
+            return []
+
+        # Only do expensive metadata analysis if we passed the quick check
         module = parse_module_cached(source)
         wrapper = MetadataWrapper(module, [QualifiedNameProvider, PositionProvider])
     except Exception:
@@ -33,50 +57,70 @@ def process_file_for_references(py, defs, module_map, target_module_names):
     return collector.refs
 
 
-def collect_definitions_and_references(root: Path, targets, search_paths):
+def collect_definitions_lightweight(root: Path, targets) -> Tuple[Dict, Dict]:
     """
-    Collect definitions and references in a single pass to avoid parsing files twice.
+    Lightweight definition collection using only basic parsing, no metadata.
     Returns:
       defs: dict {module_path: {'funcs': [names], 'globals': [names]}}
       module_map: dict {module_name: module_path}
-      refs: dict {(def_path, name, sym_type): list of (caller_path, line, col)}
     """
     defs = {}
     module_map = {}
-    refs = {}
 
-    # First pass: collect all definitions from target files
     for py in targets:
         try:
             source = py.read_text(encoding="utf8")
             module = parse_module_cached(source)
         except Exception:
             continue
+
         rel = py.relative_to(root).with_suffix("")
         module_name = str(rel).replace(os.sep, ".")
         module_map[module_name] = py
 
         funcs = []
         globals_ = []
-        # top-level body items
+
+        # Process top-level body items
         for stmt in module.body:
-            # function definitions
+            # Function definitions
             if isinstance(stmt, cst.FunctionDef):
                 funcs.append(stmt.name.value)
-            # assignments/statements for globals
+            # Simple statements for globals
             elif isinstance(stmt, cst.SimpleStatementLine):
                 for small in stmt.body:
-                    # simple assignment: name = ...
+                    # Simple assignment: name = ...
                     if isinstance(small, cst.Assign):
                         for tgt in small.targets:
                             if isinstance(tgt.target, cst.Name):
                                 globals_.append(tgt.target.value)
-                    # annotated assignment: name: type = ... or name: type
+                            elif isinstance(tgt.target, cst.Tuple):
+                                # Handle tuple assignments: a, b = 1, 2
+                                for element in tgt.target.elements:
+                                    if isinstance(element.value, cst.Name):
+                                        globals_.append(element.value.value)
+                    # Annotated assignment: name: type = ... or name: type
                     elif isinstance(small, cst.AnnAssign) and isinstance(
                         small.target, cst.Name
                     ):
                         globals_.append(small.target.value)
+
         defs[py] = {"funcs": funcs, "globals": globals_}
+
+    return defs, module_map
+
+
+def collect_definitions_and_references(root: Path, targets, search_paths):
+    """
+    Optimized version that uses two-phase parsing and early filtering.
+    Single-threaded approach since GIL makes parallel processing ineffective.
+    Returns:
+      defs: dict {module_path: {'funcs': [names], 'globals': [names]}}
+      module_map: dict {module_name: module_path}
+      refs: dict {(def_path, name, sym_type): list of (caller_path, line, col)}
+    """
+    # Phase 1: Lightweight definition collection
+    defs, module_map = collect_definitions_lightweight(root, targets)
 
     # Initialize refs dict
     refs = {
@@ -89,27 +133,13 @@ def collect_definitions_and_references(root: Path, targets, search_paths):
     # Create a set of all target module names for faster lookup
     target_module_names = set(module_map.keys())
 
-    # Second pass: collect references from all search paths using parallel processing
-    max_workers = min(
-        8, len(search_paths)
-    )  # Limit to 8 workers to avoid overwhelming the system
-
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        # Submit all files for processing
-        future_to_file = {
-            executor.submit(
-                process_file_for_references, py, defs, module_map, target_module_names
-            ): py
-            for py in search_paths
-        }
-
-        # Collect results as they complete
-        for future in as_completed(future_to_file):
-            file_refs = future.result()
-            for def_path, name, sym_type, line, col in file_refs:
-                refs[(def_path, name, sym_type)].append(
-                    (future_to_file[future], line, col)
-                )
+    # Phase 2: Reference collection with early filtering (single-threaded)
+    for py in search_paths:
+        file_refs = process_file_for_references_optimized(
+            py, defs, module_map, target_module_names
+        )
+        for def_path, name, sym_type, line, col in file_refs:
+            refs[(def_path, name, sym_type)].append((py, line, col))
 
     return defs, module_map, refs
 
@@ -124,6 +154,13 @@ class SymbolCollector(cst.CSTVisitor):
         self.target_module_names = target_module_names
         self.refs = []  # list of (def_path, name, sym_type, line, col)
 
+        # Pre-compute lookup sets for faster checking
+        self.target_symbols = {}
+        for def_path, kinds in definitions.items():
+            for sym_type, names in kinds.items():
+                for name in names:
+                    self.target_symbols[(def_path, name, sym_type)] = True
+
     def _record(self, full: str, pos, sym_type: str):
         if "." not in full:
             return
@@ -136,8 +173,9 @@ class SymbolCollector(cst.CSTVisitor):
         def_path = self.module_map.get(mod_name)
         if not def_path or def_path == self.current_path:
             return
-        syms = self.definitions.get(def_path, {}).get(sym_type, [])
-        if name in syms:
+
+        # Fast lookup using pre-computed set
+        if (def_path, name, sym_type) in self.target_symbols:
             self.refs.append(
                 (def_path, name, sym_type, pos.start.line, pos.start.column)
             )
@@ -200,17 +238,28 @@ def apply_renames(root: Path, definitions, refs, dry_run=False):
             marker = f"def {name}("
             new_name = "_" + name
             idx = source.find(marker)
-            offset = idx + len(marker)
+            offset = idx + 4  # Position after "def " but before the function name
         else:
-            marker = f"{name} ="
+            # Try different patterns for global variables
             new_name = "_" + name
+
+            # Try simple assignment: name = ...
+            marker = f"{name} ="
             idx = source.find(marker)
             offset = idx
-        if idx == -1:
-            # try annotated form
-            marker = f"{name}:"
-            idx = source.find(marker)
-            offset = idx
+
+            if idx == -1:
+                # Try tuple assignment: name, ... = ...
+                marker = f"{name},"
+                idx = source.find(marker)
+                offset = idx
+
+            if idx == -1:
+                # Try annotated form: name: type = ...
+                marker = f"{name}:"
+                idx = source.find(marker)
+                offset = idx
+
             if idx == -1:
                 continue
         rename = Rename(proj, resource, offset)
@@ -258,7 +307,7 @@ def main():
 
     # Prepare data for tabulate
     table_data = []
-    unused_symbols_found = False
+    unreferenced_symbols_found = False
 
     for (modpath, name, sym_type), occ in refs.items():
         if modpath not in definitions:
@@ -273,7 +322,7 @@ def main():
 
         # Check for unused symbols
         if len(occ) == 0:
-            unused_symbols_found = True
+            unreferenced_symbols_found = True
             if args.warn_unused:
                 print(f"  WARNING: {name} has no external references")
 
@@ -294,14 +343,20 @@ def main():
     if args.rename_locals:
         planned = apply_renames(root, definitions, refs, dry_run=args.dry_run)
         if planned:
-            print("\nRenames planned:")
+            if args.dry_run:
+                print("\nRenames planned:")
+            else:
+                print("\nRenames applied:")
             for path, old, new in planned:
                 print(f" - {old} -> {new} in {path.relative_to(root)}")
         else:
-            print("\nNo renames planned.")
+            if args.dry_run:
+                print("\nNo renames planned.")
+            else:
+                print("\nNo renames applied.")
 
     # Exit code: 0 if unused symbols found, 1 otherwise
-    return 0 if unused_symbols_found else 1
+    return 0 if unreferenced_symbols_found else 1
 
 
 if __name__ == "__main__":
