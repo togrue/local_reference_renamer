@@ -236,7 +236,6 @@ def test_exit_codes(synthetic_project):
     """Test exit codes for different scenarios."""
     project_dir = synthetic_project
 
-    # Test with unused symbols (should return 0)
     result = subprocess.run(
         [sys.executable, "local_reference_renamer.py", "--root", str(project_dir)],
         cwd=Path(__file__).parent.parent,
@@ -244,10 +243,16 @@ def test_exit_codes(synthetic_project):
         text=True,
     )
 
-    # If there are unused symbols, return code should be 0
-    # If no unused symbols, return code should be non-zero
-    # This depends on the implementation of exit codes
-    assert result.returncode in [0, 1]
+    # Check exit code: 0 if unused symbols found, 1 if none found
+    output = result.stdout
+    if "unused" in output or "UNUSED" in output:
+        assert result.returncode == 0, (
+            f"Expected exit code 0 for unused symbols, got {result.returncode}"
+        )
+    else:
+        assert result.returncode == 1, (
+            f"Expected exit code 1 when no unused symbols, got {result.returncode}"
+        )
 
 
 def test_edge_cases_tuple_assignment(synthetic_project):

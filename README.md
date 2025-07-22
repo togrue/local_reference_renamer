@@ -194,6 +194,50 @@ uv run python -m pytest tests/ -v
 uv run python -m pytest tests/ --cov=local_reference_renamer
 ```
 
+### Regression Testing
+
+The project uses two types of regression testing:
+
+#### 1. Test Projects
+
+Located in `tests/test_projects/`, these contain:
+- `original/` - Project files before renaming
+- `renamed/` - Expected project files after renaming
+
+These test projects contain known patterns of public/private functions and variables to verify the tool works correctly.
+
+#### 2. Golden Files Testing
+
+The project also uses golden files testing against the HDL-FSM-Editor repository to ensure consistent behavior across changes. Golden files contain expected output from scanning the reference project.
+
+#### Initial Setup
+
+Generate initial golden files:
+
+```bash
+# Run the golden file generation script
+python tests/generate_golden_files.py
+```
+
+#### Updating Golden Files
+
+When you make changes that affect the tool's output format or behavior, update the golden files:
+
+```bash
+# Run tests with --update-golden flag
+uv run python -m pytest tests/ -k "golden" --update-golden
+
+# Or run the generation script
+python tests/generate_golden_files.py
+```
+
+#### Golden Files
+
+The following files are maintained in `tests/golden_files/`:
+- `golden_scan_output.txt` - Expected output from scanning the golden project
+- `golden_dry_run_output.txt` - Expected output from dry-run mode
+- `golden_commit_hash.txt` - The commit hash of the golden project version being tested against
+
 ## Interpreting Test Failures
 
 If tests fail, check:

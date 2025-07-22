@@ -22,15 +22,15 @@ def _cache_helper():
 
 def _process_data():
     """Public function that uses private elements."""
-    _d = _cache_helper()
-    return f"processed: {_d}"
+    cached = _cache_helper()
+    return f"processed: {cached}"
 
 
 # Tuple assignment example
 _a, _b = 1, 2
-_c, d = 3, 4
+_c, _d = 3, 4
 
 
 def _tuple_example():
     """Function that uses tuple variables."""
-    return _a + _b + _c + d
+    return _a + _b + _c + _d
