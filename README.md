@@ -155,7 +155,7 @@ UNUSED_GLOBAL        g    unused.py                 0
 $ python local_reference_renamer.py --root ./my_project --rename-locals --dry-run
 # ... scan output ...
 
-Renames planned:
+Planned renames:
  - unused_function -> _unused_function in unused.py
  - UNUSED_GLOBAL -> _UNUSED_GLOBAL in unused.py
 ```

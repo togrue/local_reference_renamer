@@ -71,7 +71,7 @@ def test_project_dry_run():
     output = result.stdout
 
     # Check that renames are planned for unused symbols
-    assert "Renames planned:" in output
+    assert "Planned renames:" in output
     assert "private_function -> _private_function" in output
     assert "local_config -> _local_config" in output
     assert "unused_function -> _unused_function" in output
@@ -80,9 +80,9 @@ def test_project_dry_run():
     assert "process_data -> _process_data" in output
 
     # Check that public symbols that are actually used externally are not renamed
-    # Look specifically in the "Renames planned:" section
+    # Look specifically in the "Planned renames:" section
     renames_section = (
-        output.split("Renames planned:")[1] if "Renames planned:" in output else ""
+        output.split("Planned renames:")[1] if "Planned renames:" in output else ""
     )
     # Use word boundaries to avoid partial matches
     import re

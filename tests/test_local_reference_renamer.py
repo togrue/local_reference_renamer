@@ -111,7 +111,7 @@ def test_synthetic_project_dry_run(synthetic_project):
     # Check that unused symbols are planned for rename
     output = dry_run_result.stdout
     if "unused_function" in output and "UNUSED_GLOBAL" in output:
-        assert "Renames planned:" in output
+        assert "Planned renames:" in output
 
 
 def test_synthetic_project_apply_renames(synthetic_project):
@@ -146,7 +146,7 @@ def test_synthetic_project_apply_renames(synthetic_project):
         content = unused_py.read_text()
 
         # If renames were applied, check the content
-        if "Renames planned:" in rename_result.stdout:
+        if "Planned renames:" in rename_result.stdout:
             # Check that symbols were renamed (this depends on the actual implementation)
             pass
 
