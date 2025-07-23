@@ -111,16 +111,21 @@ The tool outputs a table showing:
 - **Symbol**: Name of the function or global variable
 - **Type**: `f` for functions, `g` for globals
 - **Module**: The file containing the symbol
-- **External Calls**: Number of references from other modules
+- **Count**: Number of references from other modules
 
 Example output:
 ```
-Symbol                Type     Module                   External Calls
-------                ----     ------                   --------------
-helper_func          f    utils.py                  1
-unused_function      f    unused.py                 0
-GLOBAL_VAR           g    utils.py                  1
-UNUSED_GLOBAL        g    unused.py                 0
++-------------------------+--------+------------+---------+
+| Symbol                  | Type   | Module     |   Count |
++=========================+========+============+=========+
+| helper_func             | f      | helpers.py |       2 |
++-------------------------+--------+------------+---------+
+| unused_function         | f      | unused.py  |       0 |
++-------------------------+--------+------------+---------+
+| GLOBAL_VAR              | g      | utils.py   |       1 |
++-------------------------+--------+------------+---------+
+| UNUSED_GLOBAL           | g      | unused.py  |       0 |
++-------------------------+--------+------------+---------+
 ```
 
 ## Exit Codes
@@ -136,26 +141,41 @@ This makes the tool suitable for CI integration to detect unused code.
 
 ```bash
 $ python local_reference_renamer.py --root ./my_project
-Scanning /path/to/my_project
-Definitions in: ['main.py', 'utils.py', 'unused.py']
-References in 3 files...
-
-Symbol                Type     Module                   External Calls
-------                ----     ------                   --------------
-main                  f    main.py                   0
-helper_func          f    utils.py                  1
-unused_function      f    unused.py                 0
-GLOBAL_VAR           g    utils.py                  1
-UNUSED_GLOBAL        g    unused.py                 0
++-------------------------+--------+------------+---------+
+| Symbol                  | Type   | Module     |   Count |
++=========================+========+============+=========+
+| main                    | f      | main.py    |       0 |
++-------------------------+--------+------------+---------+
+| helper_func             | f      | utils.py   |       1 |
++-------------------------+--------+------------+---------+
+| unused_function         | f      | unused.py  |       0 |
++-------------------------+--------+------------+---------+
+| GLOBAL_VAR              | g      | utils.py   |       1 |
++-------------------------+--------+------------+---------+
+| UNUSED_GLOBAL           | g      | unused.py  |       0 |
++-------------------------+--------+------------+---------+
 ```
 
 ### Example 2: Dry-run with Renames
 
 ```bash
 $ python local_reference_renamer.py --root ./my_project --rename-locals --dry-run
-# ... scan output ...
++-------------------------+--------+------------+---------+
+| Symbol                  | Type   | Module     |   Count |
++=========================+========+============+=========+
+| main                    | f      | main.py    |       0 |
++-------------------------+--------+------------+---------+
+| helper_func             | f      | utils.py   |       1 |
++-------------------------+--------+------------+---------+
+| unused_function         | f      | unused.py  |       0 |
++-------------------------+--------+------------+---------+
+| GLOBAL_VAR              | g      | utils.py   |       1 |
++-------------------------+--------+------------+---------+
+| UNUSED_GLOBAL           | g      | unused.py  |       0 |
++-------------------------+--------+------------+---------+
 
 Planned renames:
+ - main -> _main in main.py
  - unused_function -> _unused_function in unused.py
  - UNUSED_GLOBAL -> _UNUSED_GLOBAL in unused.py
 ```
@@ -164,9 +184,23 @@ Planned renames:
 
 ```bash
 $ python local_reference_renamer.py --root ./my_project --warn-unused
-# ... scan output ...
-  WARNING: unused_function has no external references
-  WARNING: UNUSED_GLOBAL has no external references
+Unused: main in /path/to/my_project/main.py
+Unused: unused_function in /path/to/my_project/unused.py
+Unused: UNUSED_GLOBAL in /path/to/my_project/unused.py
+
++-------------------------+--------+------------+---------+
+| Symbol                  | Type   | Module     |   Count |
++=========================+========+============+=========+
+| main                    | f      | main.py    |       0 |
++-------------------------+--------+------------+---------+
+| helper_func             | f      | utils.py   |       1 |
++-------------------------+--------+------------+---------+
+| unused_function         | f      | unused.py  |       0 |
++-------------------------+--------+------------+---------+
+| GLOBAL_VAR              | g      | utils.py   |       1 |
++-------------------------+--------+------------+---------+
+| UNUSED_GLOBAL           | g      | unused.py  |       0 |
++-------------------------+--------+------------+---------+
 ```
 
 ## Edge Cases Handled
