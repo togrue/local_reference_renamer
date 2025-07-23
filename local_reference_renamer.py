@@ -5,13 +5,10 @@ from pathlib import Path
 from typing import Dict, List, Tuple, Set
 from functools import lru_cache
 
-import re
 
 import libcst as cst
 import libcst.matchers as m
 from libcst.metadata import MetadataWrapper, PositionProvider, QualifiedNameProvider
-from rope.base import project as rope_project
-from rope.refactor.rename import Rename
 from tabulate import tabulate
 
 
