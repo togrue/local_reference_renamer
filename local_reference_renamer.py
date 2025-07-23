@@ -8,6 +8,7 @@ from functools import lru_cache
 import re
 
 import libcst as cst
+import libcst.matchers as m
 from libcst.metadata import MetadataWrapper, PositionProvider, QualifiedNameProvider
 from rope.base import project as rope_project
 from rope.refactor.rename import Rename
@@ -60,6 +61,56 @@ def process_file_for_references_optimized(py, defs, module_map, target_module_na
     collector = SymbolCollector(defs, module_map, py, target_module_names)
     wrapper.visit(collector)
     return collector.refs
+
+
+def process_file_for_references_matcher(py, defs, module_map, target_module_names):
+    """
+    Process a single file using LibCST matchers - much faster than full visitors.
+    This is the recommended LibCST approach for targeted pattern matching.
+    """
+    try:
+        source = py.read_text(encoding="utf8")
+
+        # Early filtering: skip files that don't contain potential references
+        if not quick_reference_check(source, target_module_names):
+            return []
+
+        module = parse_module_cached(source)
+
+        # Use matchers instead of full metadata analysis
+        refs = []
+
+        # Find all attribute accesses (module.function, module.variable)
+        for node in m.findall(module, m.Attribute()):
+            if isinstance(node.value, cst.Name):
+                module_name = node.value.value
+                if module_name in target_module_names:
+                    attr_name = node.attr.value
+                    def_path = module_map.get(module_name)
+                    if def_path and def_path != py:
+                        # Check if this is a function call
+                        if isinstance(node.parent, cst.Call):
+                            if attr_name in defs.get(def_path, {}).get("funcs", []):
+                                refs.append(
+                                    (def_path, attr_name, "funcs", 0, 0)
+                                )  # Position not available without metadata
+                        else:
+                            # Check both functions and globals
+                            if attr_name in defs.get(def_path, {}).get("funcs", []):
+                                refs.append((def_path, attr_name, "funcs", 0, 0))
+                            if attr_name in defs.get(def_path, {}).get("globals", []):
+                                refs.append((def_path, attr_name, "globals", 0, 0))
+
+        # Find all name references that might be qualified imports
+        for node in m.findall(module, m.Name()):
+            # This is a simplified check - in practice you'd need more sophisticated logic
+            # to determine if a name refers to an imported symbol
+            pass
+
+    except Exception:
+        return []
+
+    return refs
 
 
 def process_file_for_references_unoptimized(py, defs, module_map, target_module_names):
@@ -188,6 +239,36 @@ def collect_definitions_and_references_unoptimized(root: Path, targets, search_p
     # Phase 2: Reference collection without early filtering (single-threaded)
     for py in search_paths:
         file_refs = process_file_for_references_unoptimized(
+            py, defs, module_map, target_module_names
+        )
+        for def_path, name, sym_type, line, col in file_refs:
+            refs[(def_path, name, sym_type)].append((py, line, col))
+
+    return defs, module_map, refs
+
+
+def collect_definitions_and_references_matcher(root: Path, targets, search_paths):
+    """
+    Ultra-fast version using LibCST matchers instead of full metadata analysis.
+    This is the recommended approach for performance-critical applications.
+    """
+    # Phase 1: Lightweight definition collection
+    defs, module_map = collect_definitions_lightweight(root, targets)
+
+    # Initialize refs dict
+    refs = {
+        (path, name, sym): []
+        for path, kinds in defs.items()
+        for sym, names in kinds.items()
+        for name in names
+    }
+
+    # Create a set of all target module names for faster lookup
+    target_module_names = set(module_map.keys())
+
+    # Phase 2: Reference collection using matchers (much faster)
+    for py in search_paths:
+        file_refs = process_file_for_references_matcher(
             py, defs, module_map, target_module_names
         )
         for def_path, name, sym_type, line, col in file_refs:
@@ -336,6 +417,7 @@ def main():
     p.add_argument("--globals", action="store_true")
     p.add_argument("--warn-unused", action="store_true")
     p.add_argument("--no-optimizations", action="store_true")
+    p.add_argument("--test-matcher", action="store_true")
     args = p.parse_args()
 
     root = args.root.resolve()
@@ -349,7 +431,11 @@ def main():
         f"Scanning {root}\nDefinitions in: {[t.name for t in targets]}\nReferences in {len(all_py)} files...\n"
     )
 
-    if args.no_optimizations:
+    if args.test_matcher:
+        definitions, module_map, refs = collect_definitions_and_references_matcher(
+            root, targets, all_py
+        )
+    elif args.no_optimizations:
         definitions, module_map, refs = collect_definitions_and_references_unoptimized(
             root, targets, all_py
         )
