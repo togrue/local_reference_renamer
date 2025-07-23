@@ -5,8 +5,8 @@ A Python tool that analyzes Python codebases to find and optionally rename local
 This tool renames local functions and globals to start with an `_`.
 It has helped me a lot in a medium sized stand-alone project with many module-level functions and globals.
 
-As somebody (evetually you?) might find it useful, i put it on github.
-Feedback, suggestions and contributions are really appreciated.
+<details>
+<summary><strong>What it handles and doesn't handle</strong></summary>
 
 The tool works at the moment for:
 - global functions
@@ -19,6 +19,7 @@ But it does not handle:
 - class variables
 
 (As far i can think classes are tricky to implement as python can be very dynamic).
+</details>
 
 ## Features
 
@@ -29,7 +30,8 @@ But it does not handle:
 - **Warning Mode**: Get warnings for unused symbols
 - **Exit Codes**: Proper exit codes for CI integration
 
-## Installation
+<details>
+<summary><strong>Installation</strong></summary>
 
 ```bash
 # Clone the repository
@@ -40,8 +42,9 @@ cd local_reference_renamer
 uv sync
 
 # Or install manually
-pip install libcst rope
+pip install libcst
 ```
+</details>
 
 ## Usage
 
@@ -105,7 +108,8 @@ Scan only specific Python files instead of the entire project:
 python local_reference_renamer.py --root /path/to/your/project src/main.py src/utils.py
 ```
 
-## Output Format
+<details>
+<summary><strong>Output Format</strong></summary>
 
 The tool outputs a table showing:
 - **Symbol**: Name of the function or global variable
@@ -127,15 +131,19 @@ Example output:
 | UNUSED_GLOBAL           | g      | unused.py  |       0 |
 +-------------------------+--------+------------+---------+
 ```
+</details>
 
-## Exit Codes
+<details>
+<summary><strong>Exit Codes</strong></summary>
 
 - `0`: Unused symbols were found
 - `1`: No unused symbols found
 
 This makes the tool suitable for CI integration to detect unused code.
+</details>
 
-## Examples
+<details>
+<summary><strong>Examples</strong></summary>
 
 ### Example 1: Basic Project Analysis
 
@@ -202,8 +210,10 @@ Unused: UNUSED_GLOBAL in /path/to/my_project/unused.py
 | UNUSED_GLOBAL           | g      | unused.py  |       0 |
 +-------------------------+--------+------------+---------+
 ```
+</details>
 
-## Edge Cases Handled
+<details>
+<summary><strong>Edge Cases Handled</strong></summary>
 
 The tool handles various Python constructs:
 
@@ -212,8 +222,10 @@ The tool handles various Python constructs:
 - **`if __name__ == '__main__'` blocks**
 - **Import aliases**
 - **Already prefixed symbols** (skips `_private_func`)
+</details>
 
-## Testing
+<details>
+<summary><strong>Testing</strong></summary>
 
 Run the test suite:
 
@@ -280,8 +292,10 @@ If tests fail, check:
 2. **Permission errors**: Make sure you have write access to test directories
 3. **Git clone failures**: Check network connectivity for golden project tests
 4. **Encoding issues**: The tool uses ASCII arrows (`->`) for compatibility
+</details>
 
-## Contributing
+<details>
+<summary><strong>Contributing</strong></summary>
 
 1. Fork the repository
 2. Create a feature branch
@@ -289,7 +303,10 @@ If tests fail, check:
 4. Add tests for new functionality
 5. Ensure all tests pass
 6. Submit a pull request
+</details>
 
-## License
+<details>
+<summary><strong>License</strong></summary>
 
 [Add your license information here]
+</details>
