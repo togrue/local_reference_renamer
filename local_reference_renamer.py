@@ -20,6 +20,11 @@ def parse_module_cached(source: str):
     return cst.parse_module(source)
 
 
+def parse_module_uncached(source: str):
+    """Non-cached version for debugging."""
+    return cst.parse_module(source)
+
+
 def quick_reference_check(source: str, target_module_names: Set[str]) -> bool:
     """
     Quick string-based check to see if a file might contain references to our target modules.
@@ -48,6 +53,20 @@ def process_file_for_references_optimized(py, defs, module_map, target_module_na
 
         # Only do expensive metadata analysis if we passed the quick check
         module = parse_module_cached(source)
+        wrapper = MetadataWrapper(module, [QualifiedNameProvider, PositionProvider])
+    except Exception:
+        return []
+
+    collector = SymbolCollector(defs, module_map, py, target_module_names)
+    wrapper.visit(collector)
+    return collector.refs
+
+
+def process_file_for_references_unoptimized(py, defs, module_map, target_module_names):
+    """Process a single file for references without early filtering."""
+    try:
+        source = py.read_text(encoding="utf8")
+        module = parse_module_uncached(source)
         wrapper = MetadataWrapper(module, [QualifiedNameProvider, PositionProvider])
     except Exception:
         return []
@@ -144,6 +163,39 @@ def collect_definitions_and_references(root: Path, targets, search_paths):
     return defs, module_map, refs
 
 
+def collect_definitions_and_references_unoptimized(root: Path, targets, search_paths):
+    """
+    Unoptimized version that processes all files without early filtering.
+    Returns:
+      defs: dict {module_path: {'funcs': [names], 'globals': [names]}}
+      module_map: dict {module_name: module_path}
+      refs: dict {(def_path, name, sym_type): list of (caller_path, line, col)}
+    """
+    # Phase 1: Lightweight definition collection
+    defs, module_map = collect_definitions_lightweight(root, targets)
+
+    # Initialize refs dict
+    refs = {
+        (path, name, sym): []
+        for path, kinds in defs.items()
+        for sym, names in kinds.items()
+        for name in names
+    }
+
+    # Create a set of all target module names for faster lookup
+    target_module_names = set(module_map.keys())
+
+    # Phase 2: Reference collection without early filtering (single-threaded)
+    for py in search_paths:
+        file_refs = process_file_for_references_unoptimized(
+            py, defs, module_map, target_module_names
+        )
+        for def_path, name, sym_type, line, col in file_refs:
+            refs[(def_path, name, sym_type)].append((py, line, col))
+
+    return defs, module_map, refs
+
+
 class SymbolCollector(cst.CSTVisitor):
     METADATA_DEPENDENCIES = (QualifiedNameProvider, PositionProvider)
 
@@ -222,7 +274,6 @@ def apply_renames(root: Path, definitions, refs, dry_run=False):
             planned.append((def_path, name, new_name))
         return planned
 
-    proj = rope_project.Project(root.as_posix())
     planned = []
     for (def_path, name, sym_type), occ in refs.items():
         if occ:
@@ -230,44 +281,46 @@ def apply_renames(root: Path, definitions, refs, dry_run=False):
         if name.startswith("_"):
             continue
 
-        resource = proj.get_file(def_path.relative_to(root.absolute()).as_posix())
-        source = resource.read()
-        # find declaration offset
-
-        if sym_type == "funcs":
-            marker = f"def {name}("
-            new_name = "_" + name
-            idx = source.find(marker)
-            offset = idx + 4  # Position after "def " but before the function name
-        else:
-            # Try different patterns for global variables
-            new_name = "_" + name
-
-            # Try simple assignment: name = ...
-            marker = f"{name} ="
-            idx = source.find(marker)
-            offset = idx
-
-            if idx == -1:
-                # Try tuple assignment: name, ... = ...
-                marker = f"{name},"
-                idx = source.find(marker)
-                offset = idx
-
-            if idx == -1:
-                # Try annotated form: name: type = ...
-                marker = f"{name}:"
-                idx = source.find(marker)
-                offset = idx
-
-            if idx == -1:
-                continue
-        rename = Rename(proj, resource, offset)
-        changes = rename.get_changes(new_name)
-        proj.do(changes)
+        new_name = "_" + name
         planned.append((def_path, name, new_name))
-    proj.close()
+
+        if not dry_run:
+            # Read the file
+            source = def_path.read_text(encoding="utf8")
+
+            # Create a transformer to rename the symbol
+            transformer = SymbolRenamer(name, new_name)
+            module = cst.parse_module(source)
+            modified_module = module.visit(transformer)
+
+            # Write back the modified content
+            def_path.write_text(modified_module.code, encoding="utf8")
+
     return planned
+
+
+class SymbolRenamer(cst.CSTTransformer):
+    """LibCST transformer to rename symbols."""
+
+    def __init__(self, old_name: str, new_name: str):
+        self.old_name = old_name
+        self.new_name = new_name
+
+    def leave_Name(self, original_node: cst.Name, updated_node: cst.Name) -> cst.Name:
+        """Rename variable names."""
+        if original_node.value == self.old_name:
+            return updated_node.with_changes(value=self.new_name)
+        return updated_node
+
+    def leave_FunctionDef(
+        self, original_node: cst.FunctionDef, updated_node: cst.FunctionDef
+    ) -> cst.FunctionDef:
+        """Rename function names."""
+        if original_node.name.value == self.old_name:
+            return updated_node.with_changes(
+                name=updated_node.name.with_changes(value=self.new_name)
+            )
+        return updated_node
 
 
 def main():
@@ -282,6 +335,7 @@ def main():
     p.add_argument("--funcs", action="store_true")
     p.add_argument("--globals", action="store_true")
     p.add_argument("--warn-unused", action="store_true")
+    p.add_argument("--no-optimizations", action="store_true")
     args = p.parse_args()
 
     root = args.root.resolve()
@@ -295,10 +349,14 @@ def main():
         f"Scanning {root}\nDefinitions in: {[t.name for t in targets]}\nReferences in {len(all_py)} files...\n"
     )
 
-    # Use the optimized combined function
-    definitions, module_map, refs = collect_definitions_and_references(
-        root, targets, all_py
-    )
+    if args.no_optimizations:
+        definitions, module_map, refs = collect_definitions_and_references_unoptimized(
+            root, targets, all_py
+        )
+    else:
+        definitions, module_map, refs = collect_definitions_and_references(
+            root, targets, all_py
+        )
 
     if show_globals and args.verbose:
         for mod, ks in definitions.items():
