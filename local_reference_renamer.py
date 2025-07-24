@@ -4,6 +4,8 @@ import sys
 from pathlib import Path
 from functools import lru_cache
 from typing import Dict, List, Set, Tuple
+from collections import defaultdict
+import time
 
 import libcst as cst
 import libcst.matchers as m
@@ -12,6 +14,11 @@ from tabulate import tabulate
 
 # Constants
 MAX_CACHE_SIZE = 1000
+
+defaultdict_float = lambda: 0.0
+# Global timing accumulators
+timings: Dict[str, float] = defaultdict(defaultdict_float)
+counts: Dict[str, int] = defaultdict(int)
 
 
 @lru_cache(maxsize=MAX_CACHE_SIZE)
@@ -38,23 +45,48 @@ def process_file(
 ) -> List[Tuple[Path, str, str, int, int]]:
     """
     Read a file and, if it passes quick checks, collect symbol references using metadata.
+    Also records timing for each phase.
     """
+    t_start = time.perf_counter()
+
+    # Read file
+    t0 = time.perf_counter()
     try:
         src = file_path.read_text(encoding="utf8")
     except OSError:
         return []
+    timings["read_file"] += time.perf_counter() - t0
+    counts["read_file"] += 1
 
+    # Quick reference check
+    t1 = time.perf_counter()
     if not quick_reference_check(src, targets):
+        timings["quick_check"] += time.perf_counter() - t1
+        counts["quick_check"] += 1
         return []
+    timings["quick_check"] += time.perf_counter() - t1
+    counts["quick_check"] += 1
 
+    # Parse + metadata setup
+    t2 = time.perf_counter()
     try:
         module = parse_module(src)
         wrapper = MetadataWrapper(module, (QualifiedNameProvider, PositionProvider))
     except Exception:
         return []
+    timings["parse_metadata"] += time.perf_counter() - t2
+    counts["parse_metadata"] += 1
 
+    # Visit
     collector = SymbolCollector(definitions, module_map, file_path, targets)
+    t3 = time.perf_counter()
     wrapper.visit(collector)
+    timings["visit"] += time.perf_counter() - t3
+    counts["visit"] += 1
+
+    timings["process_file_total"] += time.perf_counter() - t_start
+    counts["process_file_total"] += 1
+
     return collector.refs
 
 
@@ -64,7 +96,9 @@ def collect_definitions(
     """
     Collect top-level function and global names from each Python file.
     Returns definitions and a mapping from module name to file Path.
+    Also records timing.
     """
+    t0 = time.perf_counter()
     definitions: Dict[Path, Dict[str, List[str]]] = {}
     module_map: Dict[str, Path] = {}
 
@@ -79,8 +113,8 @@ def collect_definitions(
         mod_name = str(rel).replace(os.sep, ".")
         module_map[mod_name] = path
 
-        funcs = []
-        globals_ = []
+        funcs: List[str] = []
+        globals_: List[str] = []
         for node in module.body:
             if isinstance(node, cst.FunctionDef):
                 funcs.append(node.name.value)
@@ -104,6 +138,8 @@ def collect_definitions(
 
         definitions[path] = {"funcs": funcs, "globals": globals_}
 
+    timings["collect_definitions"] += time.perf_counter() - t0
+    counts["collect_definitions"] += 1
     return definitions, module_map
 
 
@@ -123,6 +159,7 @@ class SymbolCollector(cst.CSTVisitor):
         self.targets = targets
         self.refs: List[Tuple[Path, str, str, int, int]] = []
 
+        # build symbol index once per collector
         self.symbol_index = {
             (path, name, kind)
             for path, kinds in definitions.items()
@@ -168,40 +205,52 @@ def apply_renames(
 ) -> List[Tuple[Path, str, str]]:
     """
     Prefix unused symbols with an underscore.
+    Records timing for rename phase.
     """
-    planned = []
+    t0 = time.perf_counter()
+    planned: List[Tuple[Path, str, str]] = []
+    # group renames by file to avoid multiple parses
+    renames_by_file: Dict[Path, List[Tuple[str, str]]] = defaultdict(list)
+
     for key, occurrences in refs.items():
         path, name, _ = key
         if occurrences or name.startswith("_"):
             continue
         new = f"_{name}"
         planned.append((path, name, new))
-        if not dry_run:
+        renames_by_file[path].append((name, new))
+
+    if not dry_run:
+        for path, pairs in renames_by_file.items():
             src = path.read_text(encoding="utf8")
-            transformer = SymbolRenamer(name, new)
             mod = cst.parse_module(src)
+            transformer = MultiSymbolRenamer(pairs)
             result = mod.visit(transformer)
             path.write_text(result.code, encoding="utf8")
+
+    timings["apply_renames"] += time.perf_counter() - t0
+    counts["apply_renames"] += 1
     return planned
 
 
-class SymbolRenamer(cst.CSTTransformer):
-    def __init__(self, old: str, new: str):
-        self.old = old
-        self.new = new
+class MultiSymbolRenamer(cst.CSTTransformer):
+    def __init__(self, pairs: List[Tuple[str, str]]):
+        self.pairs = pairs
 
     def leave_Name(self, original_node: cst.Name, updated_node: cst.Name) -> cst.Name:
-        if original_node.value == self.old:
-            return updated_node.with_changes(value=self.new)
+        for old, new in self.pairs:
+            if original_node.value == old:
+                return updated_node.with_changes(value=new)
         return updated_node
 
     def leave_FunctionDef(
         self, original_node: cst.FunctionDef, updated_node: cst.FunctionDef
     ) -> cst.FunctionDef:
-        if original_node.name.value == self.old:
-            return updated_node.with_changes(
-                name=updated_node.name.with_changes(value=self.new)
-            )
+        for old, new in self.pairs:
+            if original_node.name.value == old:
+                return updated_node.with_changes(
+                    name=updated_node.name.with_changes(value=new)
+                )
         return updated_node
 
 
@@ -230,13 +279,14 @@ def main() -> int:
     show_funcs = args.funcs or not args.globals
     show_globals = args.globals or not args.funcs
 
-    # Handle warn-unused as an alias for verbose
     if args.warn_unused:
         args.verbose = True
 
+    # Collect definitions
     definitions, module_map = collect_definitions(root, targets)
-    # Initialize refs with empty lists
-    refs = {
+
+    # Initialize refs
+    refs: Dict[Tuple[Path, str, str], List[Tuple[Path, int, int]]] = {
         (path, n, k): []
         for path, kinds in definitions.items()
         for k, names in kinds.items()
@@ -244,6 +294,7 @@ def main() -> int:
     }
     targets_set = set(module_map.keys())
 
+    # Process each file
     for file in all_files:
         for ref in process_file(file, definitions, module_map, targets_set):
             key = (ref[0], ref[1], ref[2])
@@ -273,6 +324,13 @@ def main() -> int:
         print(f"\n{label}:")
         for p, old, new in plan:
             print(f" - {old} -> {new} in {p.relative_to(root)}")
+
+    # Print timing summary
+    print("\nTiming summary:")
+    for key, total in timings.items():
+        count = counts.get(key, 0)
+        avg = total / count if count else 0
+        print(f" {key}: total={total:.3f}s, count={count}, avg={avg:.4f}s")
 
     return 0 if local_only else 1
 
