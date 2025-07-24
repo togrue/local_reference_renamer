@@ -197,28 +197,59 @@ class SymbolCollector(cst.CSTVisitor):
             self._add_ref(qn.name, pos, "globals")
 
 
+def _find_first_occurrence(path: Path, ident: str) -> int | None:
+    """Return 1‑based line number of the first occurrence of *ident* in *path* (best‑effort)."""
+    try:
+        src = path.read_text(encoding="utf8")
+        mod = parse_module(src)
+        wrapper = MetadataWrapper(mod, (PositionProvider,))
+        for node in mod.deep_children():
+            if isinstance(node, cst.Name) and node.value == ident:
+                pos = wrapper.get_metadata(PositionProvider, node)
+                return pos.start.line
+    except Exception:
+        pass
+    return None
+
+
 def apply_renames(
     definitions: Dict[Path, Dict[str, List[str]]],
     refs: Dict[Tuple[Path, str, str], List[Tuple[Path, int, int]]],
+    *,
     dry_run: bool = False,
 ) -> List[Tuple[Path, str, str]]:
-    """
-    Prefix unused symbols with an underscore.
-    Records timing for rename phase.
+    """Batch‑rename local‑only symbols.
+
+    Skips a rename if the intended *new* name already exists in that file and issues a warning.
+    Returns the list of successfully planned/applied renames.
     """
     t0 = time.perf_counter()
     planned: List[Tuple[Path, str, str]] = []
-    # group renames by file to avoid multiple parses
+    warnings: List[str] = []
+
+    # Group by file so we parse/transform once per file
     renames_by_file: Dict[Path, List[Tuple[str, str]]] = defaultdict(list)
 
-    for key, occurrences in refs.items():
-        path, name, _ = key
+    for (path, name, _kind), occurrences in refs.items():
+        # Skip symbols that are referenced, start with underscore, or collide with an existing name
         if occurrences or name.startswith("_"):
             continue
         new = f"_{name}"
+
+        # Detect collision with an existing top‑level name in the same file
+        existing = set(definitions[path]["funcs"]) | set(definitions[path]["globals"])
+        if new in existing:
+            line = _find_first_occurrence(path, new)
+            loc = f"{path}:{line}" if line else str(path)
+            warnings.append(
+                f"Skip rename {name!r} → {new!r}: name already exists at {loc}"
+            )
+            continue
+
         planned.append((path, name, new))
         renames_by_file[path].append((name, new))
 
+    # Apply per‑file transformers
     if not dry_run:
         for path, pairs in renames_by_file.items():
             src = path.read_text(encoding="utf8")
@@ -229,6 +260,13 @@ def apply_renames(
 
     timings["apply_renames"] += time.perf_counter() - t0
     counts["apply_renames"] += 1
+
+    # Emit warnings
+    if warnings:
+        print("\nRename warnings:")
+        for w in warnings:
+            print("  •", w)
+
     return planned
 
 
@@ -324,12 +362,12 @@ def main() -> int:
         for p, old, new in plan:
             print(f" - {old} -> {new} in {p.relative_to(root)}")
 
-    # Print timing summary
-    print("\nTiming summary:")
-    for key, total in timings.items():
-        count = counts.get(key, 0)
-        avg = total / count if count else 0
-        print(f" {key}: total={total:.3f}s, count={count}, avg={avg:.4f}s")
+    # # Print timing summary
+    # print("\nTiming summary:")
+    # for key, total in timings.items():
+    #     count = counts.get(key, 0)
+    #     avg = total / count if count else 0
+    #     print(f" {key}: total={total:.3f}s, count={count}, avg={avg:.4f}s")
 
     return 0 if local_only else 1
 
