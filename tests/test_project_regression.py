@@ -10,6 +10,12 @@ from pathlib import Path
 
 import pytest
 
+from .test_result_utils import (
+    check_test_result_against_golden,
+    check_test_result_against_golden_with_directory,
+    save_test_result_with_metadata,
+)
+
 
 def test_project_scan_output():
     """Test that scanning the original project produces expected output."""
@@ -32,6 +38,15 @@ def test_project_scan_output():
     assert result.returncode == 0, f"Scan failed: {result.stderr}"
 
     output = result.stdout
+
+    # Save test result with metadata
+    metadata = {
+        "test_type": "project_scan",
+        "project_dir": str(original_dir),
+        "return_code": result.returncode,
+        "stderr": result.stderr,
+    }
+    save_test_result_with_metadata("project_scan_output", output, metadata)
 
     # Check that we found the expected symbols
     assert "public_function" in output
@@ -69,6 +84,15 @@ def test_project_dry_run():
     assert result.returncode == 0, f"Dry-run failed: {result.stderr}"
 
     output = result.stdout
+
+    # Save test result with metadata
+    metadata = {
+        "test_type": "project_dry_run",
+        "project_dir": str(original_dir),
+        "return_code": result.returncode,
+        "stderr": result.stderr,
+    }
+    save_test_result_with_metadata("project_dry_run", output, metadata)
 
     # Check that renames are planned for unused symbols
     assert "Planned renames:" in output
@@ -118,7 +142,20 @@ def test_project_apply_renames():
 
         assert result.returncode == 0, f"Rename failed: {result.stderr}"
 
-        # Compare each file with expected result
+        # Save test result with metadata
+        metadata = {
+            "test_type": "project_apply_renames",
+            "original_dir": str(original_dir),
+            "test_dir": str(test_dir),
+            "return_code": result.returncode,
+            "stderr": result.stderr,
+        }
+        save_test_result_with_metadata("project_apply_renames", result.stdout, metadata)
+
+        # Compare each file with expected result and create directory diff
+        all_files_match = True
+        file_comparisons = []
+
         for file_name in ["main.py", "utils.py", "helpers.py", "unused.py"]:
             actual_file = test_dir / file_name
             expected_file = expected_dir / file_name
@@ -129,8 +166,24 @@ def test_project_apply_renames():
             actual_content = actual_file.read_text()
             expected_content = expected_file.read_text()
 
-            assert actual_content == expected_content, (
-                f"File {file_name} content does not match expected result.\n"
-                f"Expected:\n{expected_content}\n"
-                f"Actual:\n{actual_content}"
+            if actual_content != expected_content:
+                all_files_match = False
+                file_comparisons.append(
+                    f"File {file_name} content does not match expected result"
+                )
+
+        # Create directory diff if files don't match
+        if not all_files_match:
+            check_test_result_against_golden_with_directory(
+                "project_apply_renames_directory",
+                "Directory comparison failed - see diff files",
+                "dummy_golden.txt",  # This won't be used since we're doing directory diff
+                actual_dir=test_dir,
+                expected_dir=expected_dir,
+                normalize=False,
             )
+
+        # Assert that all files match
+        assert all_files_match, (
+            f"Some files do not match expected result: {', '.join(file_comparisons)}"
+        )

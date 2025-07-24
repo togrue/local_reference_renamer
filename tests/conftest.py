@@ -7,6 +7,8 @@ import sys
 
 import pytest
 
+from .test_result_utils import get_results_dir
+
 
 def pytest_addoption(parser):
     """Add custom pytest options."""
@@ -16,6 +18,22 @@ def pytest_addoption(parser):
         default=False,
         help="Update golden files with current output",
     )
+    parser.addoption(
+        "--clear-results",
+        action="store_true",
+        default=False,
+        help="Clear test results directory at start of test session",
+    )
+
+
+@pytest.fixture(scope="session", autouse=True)
+def clear_results_directory(request):
+    """Clear the results directory at the start of the test session if requested."""
+    if request.config.getoption("--clear-results"):
+        results_dir = get_results_dir()
+        if results_dir.exists():
+            shutil.rmtree(results_dir)
+            print(f"Cleared results directory: {results_dir}")
 
 
 @pytest.fixture
@@ -114,3 +132,57 @@ def golden_project(temp_dir, request):
         "dry_run_stderr": dry_run_result.stderr,
         "dry_run_returncode": dry_run_result.returncode,
     }
+
+
+@pytest.fixture
+def synthetic_project(temp_dir):
+    """Create a synthetic project for testing edge cases."""
+    project_dir = temp_dir / "synthetic_project"
+    project_dir.mkdir()
+
+    # Create main module
+    main_py = project_dir / "main.py"
+    main_py.write_text("""
+import os
+from utils import helper_func, GLOBAL_VAR, _private_func
+
+def public_function():
+    return helper_func() + GLOBAL_VAR
+
+def _local_function():
+    return "local only"
+
+if __name__ == "__main__":
+    public_function()
+""")
+
+    # Create utils module
+    utils_py = project_dir / "utils.py"
+    utils_py.write_text("""
+def helper_func():
+    return "helper"
+
+def _private_func():
+    return "private"
+
+GLOBAL_VAR = 42
+_LOCAL_VAR = 100
+
+# Tuple assignment
+a, b = 1, 2
+c, d = 3, 4
+
+# Annotated assignment
+value: int = 10
+""")
+
+    # Create unused module
+    unused_py = project_dir / "unused.py"
+    unused_py.write_text("""
+def unused_function():
+    return "never called"
+
+UNUSED_GLOBAL = "never used"
+""")
+
+    return project_dir
