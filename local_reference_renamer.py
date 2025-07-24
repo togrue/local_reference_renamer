@@ -8,7 +8,6 @@ from collections import defaultdict
 import time
 
 import libcst as cst
-import libcst.matchers as m
 from libcst.metadata import QualifiedNameProvider, PositionProvider, MetadataWrapper
 from tabulate import tabulate
 
