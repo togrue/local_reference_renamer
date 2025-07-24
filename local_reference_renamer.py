@@ -251,7 +251,7 @@ def main() -> int:
 
     # Display results
     table = []
-    unused = False
+    local_only = False
     for (path, name, kind), occ in refs.items():
         if kind == "funcs" and not show_funcs:
             continue
@@ -259,9 +259,9 @@ def main() -> int:
             continue
         table.append([name, kind[0], path.name, len(occ)])
         if not occ:
-            unused = True
+            local_only = True
             if args.verbose:
-                print(f"Unused: {name} in {path}")
+                print(f"Local-only: {name} in {path}")
 
     print(
         tabulate(table, headers=["Symbol", "Type", "Module", "Count"], tablefmt="grid")
@@ -274,7 +274,7 @@ def main() -> int:
         for p, old, new in plan:
             print(f" - {old} -> {new} in {p.relative_to(root)}")
 
-    return 0 if unused else 1
+    return 0 if local_only else 1
 
 
 if __name__ == "__main__":
