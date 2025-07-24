@@ -1,0 +1,1154 @@
+Local-only: draw_view_rectangle in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: view_area_by_button3 in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: view_area in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: decrement_font_size_if_window_is_too_wide in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: determine_center_of_rectangle in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: move_canvas_point_from_to in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: calculate_zoom_factor in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: canvas_zoom in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: scroll_canvas_to_show_the_zoom_center in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: adapt_scroll_bars in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: adapt_global_size_variables in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: modify_font_sizes_of_all_canvas_items in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: get_text_ids_of_canvas_window in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: search_in_text_fields_of_canvas_window in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: search_in_text_widget in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: search_in_canvas_text in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: search_in_text_fields_of_a_tab in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: move_in_foreground in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: __show_menu in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: __evaluate_menu in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: __close_menu in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: windows_x_coordinate in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: windows_y_coordinate in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: windows_x_coordinate_old in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: windows_y_coordinate_old in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\canvas_editing.py
+Local-only: execute in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\compile_handling.py
+Local-only: show_compile_messages_tab in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\compile_handling.py
+Local-only: get_command_list in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\compile_handling.py
+Local-only: replace_variables in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\compile_handling.py
+Local-only: copy_into_compile_messages_tab in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\compile_handling.py
+Local-only: insert_line_in_log in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\compile_handling.py
+Local-only: calculate_middle_point in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\connector_handling.py
+Local-only: determine_edge_length_of_the_rectangle in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\connector_handling.py
+Local-only: calculate_new_upper_left_corner_of_the_rectangle in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\connector_handling.py
+Local-only: calculate_new_lower_right_corner_of_the_rectangle in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\connector_handling.py
+Local-only: move_rectangle_in_canvas in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\connector_handling.py
+Local-only: vhdl_keywords_all_unused in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\constants.py
+Local-only: verilog_keywords_all in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\constants.py
+Local-only: keywords in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\constants.py
+Local-only: write_coords in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\file_handling.py
+Local-only: write_tags in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\file_handling.py
+Local-only: open_file_with_name in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\file_handling.py
+Local-only: remove_keyword_from_line in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\file_handling.py
+Local-only: get_data in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\file_handling.py
+Local-only: get_length_info_from_line in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\file_handling.py
+Local-only: remove_length_info in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\file_handling.py
+Local-only: get_remaining_data in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\file_handling.py
+Local-only: print_canvas in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\file_handling.py
+Local-only: filename_old in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\file_handling.py
+Local-only: insert_global_actions_clocked_in_canvas in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\global_actions_handling.py
+Local-only: create_global_actions_clocked in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\global_actions_handling.py
+Local-only: insert_global_actions_combinatorial_in_canvas in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\global_actions_handling.py
+Local-only: create_global_actions_combinatorial in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\global_actions_handling.py
+Local-only: insert_state_actions_default_in_canvas in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\global_actions_handling.py
+Local-only: create_state_actions_default in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\global_actions_handling.py
+Local-only: style in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_fsm_editor.py
+Local-only: design_is_not_ready_for_hdl_generation in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation.py
+Local-only: create_hdl in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation.py
+Local-only: copy_hdl_into_generated_hdl_tab in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation.py
+Local-only: create_entity in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation.py
+Local-only: create_module_ports in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation.py
+Local-only: write_hdl_file in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation.py
+Local-only: add_line_numbers in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation.py
+Local-only: create_sorted_state_tag_list in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation.py
+Local-only: create_type_definition_for_the_state_signal in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture.py
+Local-only: state_actions_contain_only_null_for_each_state in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: create_state_action_process_for_vhdl in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: create_state_action_process_for_verilog in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: create_a_list_with_all_possible_sensitivity_entries in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: create_state_action_list in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: create_sensitivity_list in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: remove_left_hand_sides in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: get_default_state_actions in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: create_when_entry in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: create_list_of_declarations in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: get_all_readable_port_names in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: get_all_writable_port_names in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: get_all_signals in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: add_blank_at_the_beginning_of_each_line in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: get_the_signal_names in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_architecture_state_actions.py
+Local-only: get_target_state_name in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: get_reset_transition_tag in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: get_transition_target_condition_action in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: get_condition_action_reference_of_transition in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: get_target_tag_of_transition in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: optimize_transition_specifications in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: expand_transition_specifications_by_if_identifier in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: create_action_and_branch_array_for_each_if_construct in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: action_is_present_in_each_branch in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: remove_action_from_branches in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: remove_target_from_branches in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: target_is_present_in_each_branch in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: check_for_wrong_priorities in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: merge_trace_array in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: get_a_list_of_all_state_tags in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: sort_list_of_all_state_tags in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: extract_conditions_for_all_outgoing_transitions_of_the_state in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: check_if_condition_is_a_comment in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: get_all_outgoing_transitions_in_priority_order in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: create_outgoing_transition_list_with_priority_information in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: remove_priority_information in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: check_for_equal_priorities in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: get_transition_condition in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: get_transition_action in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: remove_verilog_block_comments in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: get_all_signal_names in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: get_all_constant_names in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_library.py
+Local-only: create_signal_declaration_for_the_state_variable in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_module.py
+Local-only: get_reset_edge in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_module.py
+Local-only: indent_identically in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\hdl_generation_module.py
+Local-only: read_message in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: check_version in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: view_all_after_window_is_built in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: close_tool in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: capslock_warning in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: set_path in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: set_working_directory in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: __scroll_xview in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: __scroll_yview in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: __check_for_window_resize in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: handle_notebook_tab_changed_event in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: enable_undo_redo_if_diagram_tab_is_active_else_disable in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: clear_log_tab in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: edit_regex in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: regex_store in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: regex_cancel in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: cursor_move_hdl_tab in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: cursor_move_log_tab in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: handle_key in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: handle_key_at_ports in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: handle_key_at_generics in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: handle_key_at_declarations in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: show_path_has_changed in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: update_hdl_tab_if_necessary in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: highlight_item in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: change_color_of_diagram_background in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: __resize_event_interface_tab_frames in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: __resize_event_internals_tab_frames in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: VERSION in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: select_file_number_label in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: select_file_number_frame in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: interface_package_label in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: interface_package_scroll in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: interface_generics_label in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: interface_ports_label in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: internals_package_label in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: internals_package_scroll in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: internals_architecture_label in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: internals_process_clocked_label in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: internals_process_combinatorial_label in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: compile_cmd_docu in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: debug_active in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: regex_dialog in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: regex_dialog_entry in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: regex_dialog_filename_entry in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: regex_dialog_linenumber_entry in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: regex_error_happened in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: line_number_under_pointer_log_tab in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: line_number_under_pointer_hdl_tab in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: func_id_jump1 in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: func_id_jump2 in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: func_id_jump in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: module_name_entry in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: clock_signal_name_entry in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: diagram_background_color_error in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: interface_package_frame in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: internals_package_frame in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: trace_id_generate_path_value in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: trace_id_working_directory_value in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\main_window.py
+Local-only: get_exact_or_rounded_canvas_coordinates in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling.py
+Local-only: state_is_moved_to_near_to_state_or_connector in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling.py
+Local-only: connector_moved_too_close_to_other_object in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling.py
+Local-only: get_item_ids_at_moving_end_location in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: check_if_only_transition_start_or_end_point_is_moved in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: moving_of_transition_start_or_end_point_ends_at_illegal_place in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: move_the_line_to_the_center_of_the_target in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: update_the_tags_of_the_transition in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: shorten_all_moved_transitions_to_the_state_borders in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: move_all_ca_connection_end_points_to_the_new_transition_start_points in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: hide_the_connection_line_of_moved_condition_action_window in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: a_line_is_moved_to_a_window in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: a_line_is_moved_to_a_priority_rectangle in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: a_line_start_or_end_point_is_moved_to_a_line in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: a_point_of_a_line_is_moved_illegally_to_a_reset_entry in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: start_or_end_of_a_line_was_moved_to_free_space in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: transition_connects_reset_entry_and_connector in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_finish.py
+Local-only: move_initialization_overlapping in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: create_a_list_of_overlapping_items_near_the_mouse_click_location in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: mouse_click_happened_in_state_name in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: mouse_click_happened_in_priority_number in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: mouse_click_happened_in_connection_line in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: mouse_click_happened_in_state_comment_line in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: mouse_click_happened_in_grid_line in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: create_move_list in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: create_move_list_entry_if_a_diagram_object_is_moved in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: add_lines_connected_to_the_diagram_object_to_the_list in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: get_move_list_entry_for_line_of_condition_action_block in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: add_items_for_moving_a_single_line_point_to_the_list in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: find_the_item_id_of_the_line in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: search_for_the_tags_of_a_transition in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: remove_tags_and_hide_priority in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\move_handling_initialization.py
+Local-only: insert_reset_entry_in_canvas in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: create_reset_entry in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: create_polygon_shape_for_reset_entry in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: move_reset_entry_polygon_to_event in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: determine_width_of_the_polygon in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: determine_height_of_the_polygon in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: calculate_new_upper_left_corner_of_the_polygon in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: calculate_new_upper_right_corner_of_the_polygon in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: calculate_new_lower_right_corner_of_the_polygon in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: calculate_new_lower_left_corner_of_the_polygon in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: calculate_new_center_of_the_polygon in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: move_polygon_in_canvas in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: difference_x in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: difference_y in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\reset_entry_handling.py
+Local-only: calculate_middle_point in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\state_handling.py
+Local-only: determine_the_tag_of_the_state_name in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\state_handling.py
+Local-only: determine_the_radius_of_the_state in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\state_handling.py
+Local-only: evaluate_menu in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\state_handling.py
+Local-only: close_menu in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\state_handling.py
+Local-only: update_state_name in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\state_handling.py
+Local-only: __get_list_of_state_names in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\state_handling.py
+Local-only: abort_edit_text in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\state_handling.py
+Local-only: show_new_state_name in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\state_handling.py
+Local-only: resize_state in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\state_handling.py
+Local-only: get_rectangle_dimensions in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: remove_duplicate_points in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: reset_entry_has_no_transition in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: transition_draw in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: handle_next_added_transition_point in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: check_if_transition_ends_at_connector in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: get_canvas_id_of_state_or_connector_under_new_transition_point in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: duplicate_last_transition_point_for_continuing_the_drawing_of_the_transition in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: add_tags_to_end_state_and_transition in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: move_transition_end_point_to_the_middle_of_the_end_state in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: abort_inserting_transition in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: end_transition_insertion_by_modifying_bindings in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: move_transition_start_and_end_point_to_the_edge_of_the_state_circle in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: add_priority_rectangle_to_the_new_transition in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: get_unused_priority in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: update_priority in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: abort_edit_text in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: evaluate_menu in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: close_menu in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: difference_x in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: difference_y in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\transition_handling.py
+Local-only: add_changes_to_design_stack in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: remove_stack_entries_from_write_pointer_to_the_end_of_the_stack in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: get_complete_design_as_text_object in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: get_coords in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: get_tags in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: get_fill_color in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: set_diagram_to_version_selected_by_stack_pointer in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: remove_keyword_from_line in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: get_data in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: get_length_info_from_line in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: remove_length_info in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: get_remaining_data in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: line_index in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\undo_handling.py
+Local-only: calculate_vectors_from_line_point_to_next_line_point in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\vector_handling.py
+Local-only: calculate_cos_phi_values_between_vectors in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\vector_handling.py
+Local-only: sub_vectors in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\vector_handling.py
+Local-only: calculate_scalar_product in C:\Users\Admin\AppData\Local\Temp\tmp92wy8gqh\hdl-fsm-editor\vector_handling.py
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| Symbol                                                                       | Type   | Module                                        |   Count |
++==============================================================================+========+===============================================+=========+
+| store_mouse_position                                                         | f      | canvas_editing.py                             |       3 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_font_for_state_names                                                  | f      | canvas_editing.py                             |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| translate_window_event_coordinates_in_rounded_canvas_coordinates             | f      | canvas_editing.py                             |      16 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| translate_window_event_coordinates_in_exact_canvas_coordinates               | f      | canvas_editing.py                             |      20 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| delete                                                                       | f      | canvas_editing.py                             |      26 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| adapt_visibility_of_priority_rectangles_at_state                             | f      | canvas_editing.py                             |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| start_view_rectangle                                                         | f      | canvas_editing.py                             |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| draw_view_rectangle                                                          | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| view_area_by_button3                                                         | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| view_area                                                                    | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| view_all                                                                     | f      | canvas_editing.py                             |       7 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| view_rectangle                                                               | f      | canvas_editing.py                             |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| decrement_font_size_if_window_is_too_wide                                    | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| determine_center_of_rectangle                                                | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_canvas_point_from_to                                                    | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_zoom_factor                                                        | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| zoom_wheel                                                                   | f      | canvas_editing.py                             |       3 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| zoom_plus                                                                    | f      | canvas_editing.py                             |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| zoom_minus                                                                   | f      | canvas_editing.py                             |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| canvas_zoom                                                                  | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| scroll_canvas_to_show_the_zoom_center                                        | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| adapt_scroll_bars                                                            | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| adapt_global_size_variables                                                  | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| scroll_start                                                                 | f      | canvas_editing.py                             |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| scroll_move                                                                  | f      | canvas_editing.py                             |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| scroll_end                                                                   | f      | canvas_editing.py                             |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| scroll_wheel                                                                 | f      | canvas_editing.py                             |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| modify_font_sizes_of_all_canvas_items                                        | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_visible_center_as_string                                                 | f      | canvas_editing.py                             |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| shift_visible_center_to_window_center                                        | f      | canvas_editing.py                             |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| find                                                                         | f      | canvas_editing.py                             |      12 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_text_ids_of_canvas_window                                                | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| search_in_text_fields_of_canvas_window                                       | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| search_in_text_widget                                                        | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| search_in_canvas_text                                                        | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| search_in_text_fields_of_a_tab                                               | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_in_foreground                                                           | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| __show_menu                                                                  | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| __evaluate_menu                                                              | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| __close_menu                                                                 | f      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| state_radius                                                                 | g      | canvas_editing.py                             |      65 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| priority_distance                                                            | g      | canvas_editing.py                             |      11 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| reset_entry_size                                                             | g      | canvas_editing.py                             |       8 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| canvas_x_coordinate                                                          | g      | canvas_editing.py                             |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| canvas_y_coordinate                                                          | g      | canvas_editing.py                             |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| windows_x_coordinate                                                         | g      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| windows_y_coordinate                                                         | g      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| windows_x_coordinate_old                                                     | g      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| windows_y_coordinate_old                                                     | g      | canvas_editing.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| fontsize                                                                     | g      | canvas_editing.py                             |      19 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| label_fontsize                                                               | g      | canvas_editing.py                             |      14 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| state_name_font                                                              | g      | canvas_editing.py                             |      10 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| switch_to_state_insertion                                                    | f      | canvas_modify_bindings.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| switch_to_transition_insertion                                               | f      | canvas_modify_bindings.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| switch_to_connector_insertion                                                | f      | canvas_modify_bindings.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| switch_to_reset_entry_insertion                                              | f      | canvas_modify_bindings.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| switch_to_state_action_default_insertion                                     | f      | canvas_modify_bindings.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| switch_to_global_action_clocked_insertion                                    | f      | canvas_modify_bindings.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| switch_to_global_action_combinatorial_insertion                              | f      | canvas_modify_bindings.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| switch_to_move_mode                                                          | f      | canvas_modify_bindings.py                     |      16 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| switch_to_view_area                                                          | f      | canvas_modify_bindings.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| compile_hdl                                                                  | f      | compile_handling.py                           |       3 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| execute                                                                      | f      | compile_handling.py                           |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| show_compile_messages_tab                                                    | f      | compile_handling.py                           |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_command_list                                                             | f      | compile_handling.py                           |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| replace_variables                                                            | f      | compile_handling.py                           |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| copy_into_compile_messages_tab                                               | f      | compile_handling.py                           |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_line_in_log                                                           | f      | compile_handling.py                           |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_connector                                                             | f      | connector_handling.py                         |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_to                                                                      | f      | connector_handling.py                         |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_middle_point                                                       | f      | connector_handling.py                         |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| determine_edge_length_of_the_rectangle                                       | f      | connector_handling.py                         |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_new_upper_left_corner_of_the_rectangle                             | f      | connector_handling.py                         |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_new_lower_right_corner_of_the_rectangle                            | f      | connector_handling.py                         |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_rectangle_in_canvas                                                     | f      | connector_handling.py                         |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| connector_number                                                             | g      | connector_handling.py                         |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| difference_x                                                                 | g      | connector_handling.py                         |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| difference_y                                                                 | g      | connector_handling.py                         |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| vhdl_keywords_for_signal_handling                                            | g      | constants.py                                  |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| vhdl_keywords_all_unused                                                     | g      | constants.py                                  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| verilog_keywords_for_signal_handling                                         | g      | constants.py                                  |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| verilog_keywords_all                                                         | g      | constants.py                                  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| keywords                                                                     | g      | constants.py                                  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| vhdl_keywords                                                                | g      | constants.py                                  |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| verilog_keywords                                                             | g      | constants.py                                  |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| CONNECTOR_COLOR                                                              | g      | constants.py                                  |       7 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| STATE_COLOR                                                                  | g      | constants.py                                  |      10 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| save_as                                                                      | f      | file_handling.py                              |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| save                                                                         | f      | file_handling.py                              |       5 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| write_coords                                                                 | f      | file_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| write_tags                                                                   | f      | file_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| open_file_old                                                                | f      | file_handling.py                              |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| open_file                                                                    | f      | file_handling.py                              |       5 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| open_file_with_name                                                          | f      | file_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_old_design                                                            | f      | file_handling.py                              |       5 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_keyword_from_line                                                     | f      | file_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_data                                                                     | f      | file_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_length_info_from_line                                                    | f      | file_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_length_info                                                           | f      | file_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_remaining_data                                                           | f      | file_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| print_canvas                                                                 | f      | file_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| save_in_file_new                                                             | f      | file_handling.py                              |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| open_file_with_name_new                                                      | f      | file_handling.py                              |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| filename                                                                     | g      | file_handling.py                              |      11 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| filename_old                                                                 | g      | file_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_global_actions_clocked                                                | f      | global_actions_handling.py                    |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_global_actions_clocked_in_canvas                                      | f      | global_actions_handling.py                    |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_global_actions_clocked                                                | f      | global_actions_handling.py                    |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_global_actions_combinatorial                                          | f      | global_actions_handling.py                    |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_global_actions_combinatorial_in_canvas                                | f      | global_actions_handling.py                    |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_global_actions_combinatorial                                          | f      | global_actions_handling.py                    |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_state_actions_default                                                 | f      | global_actions_handling.py                    |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_state_actions_default_in_canvas                                       | f      | global_actions_handling.py                    |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_state_actions_default                                                 | f      | global_actions_handling.py                    |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| global_actions_clocked_number                                                | g      | global_actions_handling.py                    |      12 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| global_actions_combinatorial_number                                          | g      | global_actions_handling.py                    |      11 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| state_actions_default_number                                                 | g      | global_actions_handling.py                    |      10 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| style                                                                        | g      | hdl_fsm_editor.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| run_hdl_generation                                                           | f      | hdl_generation.py                             |       8 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| design_is_not_ready_for_hdl_generation                                       | f      | hdl_generation.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_hdl                                                                   | f      | hdl_generation.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| copy_hdl_into_generated_hdl_tab                                              | f      | hdl_generation.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_entity                                                                | f      | hdl_generation.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_module_ports                                                          | f      | hdl_generation.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| write_hdl_file                                                               | f      | hdl_generation.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_file_names                                                               | f      | hdl_generation.py                             |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| add_line_numbers                                                             | f      | hdl_generation.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_sorted_state_tag_list                                                 | f      | hdl_generation.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| last_line_number_of_file1                                                    | g      | hdl_generation.py                             |       3 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_architecture                                                          | f      | hdl_generation_architecture.py                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_type_definition_for_the_state_signal                                  | f      | hdl_generation_architecture.py                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_state_action_process                                                  | f      | hdl_generation_architecture_state_actions.py  |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| state_actions_contain_only_null_for_each_state                               | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_state_action_process_for_vhdl                                         | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_state_action_process_for_verilog                                      | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_a_list_with_all_possible_sensitivity_entries                          | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_state_action_list                                                     | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_sensitivity_list                                                      | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_left_hand_sides                                                       | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_default_state_actions                                                    | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_when_entry                                                            | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_readable_ports                                                       | f      | hdl_generation_architecture_state_actions.py  |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_writable_ports                                                       | f      | hdl_generation_architecture_state_actions.py  |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_list_of_declarations                                                  | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_port_types                                                           | f      | hdl_generation_architecture_state_actions.py  |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_generic_names                                                        | f      | hdl_generation_architecture_state_actions.py  |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_readable_port_names                                                  | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_writable_port_names                                                  | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_signals                                                              | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| add_blank_at_the_beginning_of_each_line                                      | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_the_signal_names                                                         | f      | hdl_generation_architecture_state_actions.py  |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_vhdl_for_the_state_sequence                                           | f      | hdl_generation_architecture_state_sequence.py |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_verilog_for_the_state_sequence                                        | f      | hdl_generation_architecture_state_sequence.py |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| indent_text_by_the_given_number_of_tabs                                      | f      | hdl_generation_library.py                     |      60 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_text_from_text_widget                                                    | f      | hdl_generation_library.py                     |      22 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_target_state_name                                                        | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_reset_condition_and_reset_action                                      | f      | hdl_generation_library.py                     |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_reset_transition_tag                                                     | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_transition_target_condition_action                                       | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_condition_action_reference_of_transition                                 | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_target_tag_of_transition                                                 | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| extract_transition_specifications_from_the_graph                             | f      | hdl_generation_library.py                     |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| optimize_transition_specifications                                           | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| expand_transition_specifications_by_if_identifier                            | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_action_and_branch_array_for_each_if_construct                         | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| action_is_present_in_each_branch                                             | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_action_from_branches                                                  | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_target_from_branches                                                  | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| target_is_present_in_each_branch                                             | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| check_for_wrong_priorities                                                   | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| merge_trace_array                                                            | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_a_list_of_all_state_tags                                                 | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| sort_list_of_all_state_tags                                                  | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| extract_conditions_for_all_outgoing_transitions_of_the_state                 | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| check_if_condition_is_a_comment                                              | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_outgoing_transitions_in_priority_order                               | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_outgoing_transition_list_with_priority_information                    | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_priority_information                                                  | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| check_for_equal_priorities                                                   | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_transition_condition                                                     | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_transition_action                                                        | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_global_actions_before                                                 | f      | hdl_generation_library.py                     |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_global_actions_after                                                  | f      | hdl_generation_library.py                     |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_concurrent_actions                                                    | f      | hdl_generation_library.py                     |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_comments_and_returns                                                  | f      | hdl_generation_library.py                     |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_functions                                                             | f      | hdl_generation_library.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_type_declarations                                                     | f      | hdl_generation_library.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_vhdl_block_comments                                                   | f      | hdl_generation_library.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_verilog_block_comments                                                | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| convert_hdl_lines_into_a_searchable_string                                   | f      | hdl_generation_library.py                     |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| surround_character_by_blanks                                                 | f      | hdl_generation_library.py                     |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_declared_signal_names                                                | f      | hdl_generation_library.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_declared_constant_names                                              | f      | hdl_generation_library.py                     |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_signal_names                                                         | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_all_constant_names                                                       | f      | hdl_generation_library.py                     |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_module_logic                                                          | f      | hdl_generation_module.py                      |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_signal_declaration_for_the_state_variable                             | f      | hdl_generation_module.py                      |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_reset_edge                                                               | f      | hdl_generation_module.py                      |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| indent_identically                                                           | f      | hdl_generation_module.py                      |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| recreate_keyword_list_of_unused_signals                                      | f      | linting.py                                    |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| update_highlight_tags_in_all_windows_for_not_read_not_written_and_comment    | f      | linting.py                                    |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| read_message                                                                 | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| check_version                                                                | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| evaluate_commandline_parameters                                              | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| show_window                                                                  | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| view_all_after_window_is_built                                               | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| close_tool                                                                   | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_root                                                                  | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_menu_bar                                                              | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| capslock_warning                                                             | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_notebook                                                              | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_control_notebook_tab                                                  | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| set_path                                                                     | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| set_working_directory                                                        | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_interface_notebook_tab                                                | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_internals_notebook_tab                                                | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_diagram_notebook_tab                                                  | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| __scroll_xview                                                               | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| __scroll_yview                                                               | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| __check_for_window_resize                                                    | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| handle_notebook_tab_changed_event                                            | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| enable_undo_redo_if_diagram_tab_is_active_else_disable                       | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_hdl_notebook_tab                                                      | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_log_notebook_tab                                                      | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| clear_log_tab                                                                | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| edit_regex                                                                   | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_store                                                                  | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_cancel                                                                 | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| cursor_move_hdl_tab                                                          | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| cursor_move_log_tab                                                          | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| switch_language_mode                                                         | f      | main_window.py                                |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| handle_key                                                                   | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| handle_key_at_ports                                                          | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| handle_key_at_generics                                                       | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| handle_key_at_declarations                                                   | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| show_path_has_changed                                                        | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| show_tab                                                                     | f      | main_window.py                                |      12 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| update_hdl_tab_if_necessary                                                  | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| highlight_item                                                               | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| change_color_of_diagram_background                                           | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| run_color_changer                                                            | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| __resize_event_interface_tab_frames                                          | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| __resize_event_internals_tab_frames                                          | f      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| set_word_boundaries                                                          | f      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| VERSION                                                                      | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| header_string                                                                | g      | main_window.py                                |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| state_action_default_button                                                  | g      | main_window.py                                |       9 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| global_action_clocked_button                                                 | g      | main_window.py                                |       9 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| global_action_combinatorial_button                                           | g      | main_window.py                                |       9 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| reset_entry_button                                                           | g      | main_window.py                                |       9 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| root                                                                         | g      | main_window.py                                |      31 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| notebook                                                                     | g      | main_window.py                                |      15 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| module_name                                                                  | g      | main_window.py                                |      19 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| language                                                                     | g      | main_window.py                                |      45 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| generate_path_value                                                          | g      | main_window.py                                |      12 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| working_directory_value                                                      | g      | main_window.py                                |       9 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| select_file_number_text                                                      | g      | main_window.py                                |      10 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| reset_signal_name                                                            | g      | main_window.py                                |       8 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| clock_signal_name                                                            | g      | main_window.py                                |      10 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| compile_cmd                                                                  | g      | main_window.py                                |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| edit_cmd                                                                     | g      | main_window.py                                |       5 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| interface_package_text                                                       | g      | main_window.py                                |      16 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| interface_generics_text                                                      | g      | main_window.py                                |      23 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| interface_ports_text                                                         | g      | main_window.py                                |      28 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| internals_package_text                                                       | g      | main_window.py                                |      16 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| internals_architecture_text                                                  | g      | main_window.py                                |      26 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| internals_process_clocked_text                                               | g      | main_window.py                                |      24 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| internals_process_combinatorial_text                                         | g      | main_window.py                                |      23 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| canvas                                                                       | g      | main_window.py                                |     820 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| hdl_frame_text                                                               | g      | main_window.py                                |      20 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| log_frame_text                                                               | g      | main_window.py                                |      24 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| select_file_number_label                                                     | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| select_file_number_frame                                                     | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| interface_package_label                                                      | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| interface_package_scroll                                                     | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| interface_generics_label                                                     | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| interface_ports_label                                                        | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| internals_package_label                                                      | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| internals_package_scroll                                                     | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| internals_architecture_label                                                 | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| internals_process_clocked_label                                              | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| internals_process_combinatorial_label                                        | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| compile_cmd_docu                                                             | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| debug_active                                                                 | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_dialog                                                                 | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_message_find_for_vhdl                                                  | g      | main_window.py                                |       3 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_message_find_for_verilog                                               | g      | main_window.py                                |       3 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_file_name_quote                                                        | g      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_file_line_number_quote                                                 | g      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_dialog_entry                                                           | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_dialog_filename_entry                                                  | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_dialog_linenumber_entry                                                | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| regex_error_happened                                                         | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| line_number_under_pointer_log_tab                                            | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| line_number_under_pointer_hdl_tab                                            | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| func_id_jump1                                                                | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| func_id_jump2                                                                | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| size_of_file1_line_number                                                    | g      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| size_of_file2_line_number                                                    | g      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| func_id_jump                                                                 | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| module_name_entry                                                            | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| clock_signal_name_entry                                                      | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| diagram_background_color                                                     | g      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| diagram_background_color_error                                               | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| show_grid                                                                    | g      | main_window.py                                |       5 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| grid_drawer                                                                  | g      | main_window.py                                |      18 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| paned_window_interface                                                       | g      | main_window.py                                |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| interface_package_frame                                                      | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| paned_window_internals                                                       | g      | main_window.py                                |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| internals_package_frame                                                      | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| sash_positions                                                               | g      | main_window.py                                |       3 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| undo_button                                                                  | g      | main_window.py                                |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| redo_button                                                                  | g      | main_window.py                                |       3 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| trace_id_generate_path_value                                                 | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| trace_id_working_directory_value                                             | g      | main_window.py                                |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| date_of_hdl_file_shown_in_hdl_tab                                            | g      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| date_of_hdl_file2_shown_in_hdl_tab                                           | g      | main_window.py                                |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| keyword_color                                                                | g      | main_window.py                                |      10 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| keywords                                                                     | g      | main_window.py                                |      16 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_do                                                                      | f      | move_handling.py                              |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_exact_or_rounded_canvas_coordinates                                      | f      | move_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| state_is_moved_to_near_to_state_or_connector                                 | f      | move_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| connector_moved_too_close_to_other_object                                    | f      | move_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_finish                                                                  | f      | move_handling_finish.py                       |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_item_ids_at_moving_end_location                                          | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| check_if_only_transition_start_or_end_point_is_moved                         | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| moving_of_transition_start_or_end_point_ends_at_illegal_place                | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_the_line_to_the_center_of_the_target                                    | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| update_the_tags_of_the_transition                                            | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| shorten_all_moved_transitions_to_the_state_borders                           | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_all_ca_connection_end_points_to_the_new_transition_start_points         | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| hide_the_connection_line_of_moved_condition_action_window                    | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| a_line_is_moved_to_a_window                                                  | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| a_line_is_moved_to_a_priority_rectangle                                      | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| a_line_start_or_end_point_is_moved_to_a_line                                 | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| a_point_of_a_line_is_moved_illegally_to_a_reset_entry                        | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| start_or_end_of_a_line_was_moved_to_free_space                               | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| transition_connects_reset_entry_and_connector                                | f      | move_handling_finish.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_initialization                                                          | f      | move_handling_initialization.py               |       9 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_initialization_overlapping                                              | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_a_list_of_overlapping_items_near_the_mouse_click_location             | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| mouse_click_happened_in_state_name                                           | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| mouse_click_happened_in_priority_number                                      | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| mouse_click_happened_in_connection_line                                      | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| mouse_click_happened_in_state_comment_line                                   | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| mouse_click_happened_in_grid_line                                            | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_move_list                                                             | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_move_list_entry_if_a_diagram_object_is_moved                          | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| add_lines_connected_to_the_diagram_object_to_the_list                        | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_move_list_entry_for_line_of_condition_action_block                       | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| add_items_for_moving_a_single_line_point_to_the_list                         | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| find_the_item_id_of_the_line                                                 | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| search_for_the_tags_of_a_transition                                          | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_tags_and_hide_priority                                                | f      | move_handling_initialization.py               |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_reset_entry                                                           | f      | reset_entry_handling.py                       |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_reset_entry_in_canvas                                                 | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_reset_entry                                                           | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| create_polygon_shape_for_reset_entry                                         | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_reset_entry_polygon_to_event                                            | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_to                                                                      | f      | reset_entry_handling.py                       |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| determine_width_of_the_polygon                                               | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| determine_height_of_the_polygon                                              | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_new_upper_left_corner_of_the_polygon                               | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_new_upper_right_corner_of_the_polygon                              | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_new_lower_right_corner_of_the_polygon                              | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_new_lower_left_corner_of_the_polygon                               | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_new_center_of_the_polygon                                          | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_polygon_in_canvas                                                       | f      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| reset_entry_number                                                           | g      | reset_entry_handling.py                       |      10 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| difference_x                                                                 | g      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| difference_y                                                                 | g      | reset_entry_handling.py                       |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_to                                                                      | f      | state_handling.py                             |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_middle_point                                                       | f      | state_handling.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| determine_the_tag_of_the_state_name                                          | f      | state_handling.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| determine_the_radius_of_the_state                                            | f      | state_handling.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_canvas_id_of_state_name                                                  | f      | state_handling.py                             |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| insert_state                                                                 | f      | state_handling.py                             |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| show_menu                                                                    | f      | state_handling.py                             |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| evaluate_menu                                                                | f      | state_handling.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| close_menu                                                                   | f      | state_handling.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| edit_state_name                                                              | f      | state_handling.py                             |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| update_state_name                                                            | f      | state_handling.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| __get_list_of_state_names                                                    | f      | state_handling.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| abort_edit_text                                                              | f      | state_handling.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| show_new_state_name                                                          | f      | state_handling.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| resize_state                                                                 | f      | state_handling.py                             |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| state_number                                                                 | g      | state_handling.py                             |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| difference_x                                                                 | g      | state_handling.py                             |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| difference_y                                                                 | g      | state_handling.py                             |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_to                                                                      | f      | transition_handling.py                        |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_rectangle_dimensions                                                     | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| extend_transition_to_state_middle_points                                     | f      | transition_handling.py                        |       8 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_point_to_move                                                            | f      | transition_handling.py                        |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| shorten_to_state_border                                                      | f      | transition_handling.py                        |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_duplicate_points                                                      | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| transition_start                                                             | f      | transition_handling.py                        |       1 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| reset_entry_has_no_transition                                                | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| transition_draw                                                              | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| handle_next_added_transition_point                                           | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| check_if_transition_ends_at_connector                                        | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_canvas_id_of_state_or_connector_under_new_transition_point               | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| duplicate_last_transition_point_for_continuing_the_drawing_of_the_transition | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| add_tags_to_end_state_and_transition                                         | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_transition_end_point_to_the_middle_of_the_end_state                     | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| abort_inserting_transition                                                   | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| end_transition_insertion_by_modifying_bindings                               | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| move_transition_start_and_end_point_to_the_edge_of_the_state_circle          | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| add_priority_rectangle_to_the_new_transition                                 | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| determine_priorities_of_outgoing_transitions                                 | f      | transition_handling.py                        |       4 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_unused_priority                                                          | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| edit_priority                                                                | f      | transition_handling.py                        |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| update_priority                                                              | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| abort_edit_text                                                              | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| show_menu                                                                    | f      | transition_handling.py                        |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| evaluate_menu                                                                | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| close_menu                                                                   | f      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| transition_number                                                            | g      | transition_handling.py                        |       6 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| difference_x                                                                 | g      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| difference_y                                                                 | g      | transition_handling.py                        |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| modify_window_title                                                          | f      | undo_handling.py                              |      34 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| design_has_changed                                                           | f      | undo_handling.py                              |      56 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| undo                                                                         | f      | undo_handling.py                              |       3 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| redo                                                                         | f      | undo_handling.py                              |       3 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| add_changes_to_design_stack                                                  | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_stack_entries_from_write_pointer_to_the_end_of_the_stack              | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_complete_design_as_text_object                                           | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_coords                                                                   | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_tags                                                                     | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_fill_color                                                               | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| set_diagram_to_version_selected_by_stack_pointer                             | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_keyword_from_line                                                     | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_data                                                                     | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_length_info_from_line                                                    | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| remove_length_info                                                           | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| get_remaining_data                                                           | f      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| stack                                                                        | g      | undo_handling.py                              |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| stack_write_pointer                                                          | g      | undo_handling.py                              |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| line_index                                                                   | g      | undo_handling.py                              |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| shorten_vector                                                               | f      | vector_handling.py                            |      28 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| try_to_convert_into_straight_line                                            | f      | vector_handling.py                            |       2 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_vectors_from_line_point_to_next_line_point                         | f      | vector_handling.py                            |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_cos_phi_values_between_vectors                                     | f      | vector_handling.py                            |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| sub_vectors                                                                  | f      | vector_handling.py                            |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
+| calculate_scalar_product                                                     | f      | vector_handling.py                            |       0 |
++------------------------------------------------------------------------------+--------+-----------------------------------------------+---------+
