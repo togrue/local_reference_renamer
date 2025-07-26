@@ -23,8 +23,10 @@ def test_cached_project_scan(golden_project, request):
     """Test that scanning the cached project works correctly."""
     result = golden_project
 
-    # Check that scan completed successfully
-    assert result["scan_returncode"] == 0, f"Scan failed: {result['scan_stderr']}"
+    # Check that scan completed and found naming convention violations (return code 1)
+    assert result["scan_returncode"] == 1, (
+        f"Scan should find violations but returned {result['scan_returncode']}: {result['scan_stderr']}"
+    )
 
     # Check that we got some output
     assert result["scan_output"], "No scan output produced"
@@ -41,7 +43,7 @@ def test_cached_project_dry_run(golden_project, request):
     """Test that dry-run mode works correctly with cached project."""
     result = golden_project
 
-    # Check that dry-run completed successfully
+    # Check that dry-run completed successfully (return code 0 for successful renames)
     assert result["dry_run_returncode"] == 0, (
         f"Dry-run failed: {result['dry_run_stderr']}"
     )
@@ -152,7 +154,9 @@ def test_cached_project_performance():
     end_time = time.time()
     scan_duration = end_time - start_time
 
-    assert scan_result.returncode == 0, f"Scan failed: {scan_result.stderr}"
+    assert scan_result.returncode == 1, (
+        f"Scan should find violations but returned {scan_result.returncode}: {scan_result.stderr}"
+    )
 
     # Save test result with metadata
     metadata = {

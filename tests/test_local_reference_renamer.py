@@ -11,8 +11,10 @@ def test_golden_project_scan(golden_project, request):
     """Test that the golden project scan works correctly."""
     result = golden_project
 
-    # Check that scan completed successfully
-    assert result["scan_returncode"] == 0, f"Scan failed: {result['scan_stderr']}"
+    # Check that scan completed and found naming convention violations (return code 1)
+    assert result["scan_returncode"] == 1, (
+        f"Scan should find violations but returned {result['scan_returncode']}: {result['scan_stderr']}"
+    )
 
     # Check that we got some output
     assert result["scan_output"], "No scan output produced"
@@ -29,7 +31,7 @@ def test_golden_project_dry_run(golden_project, request):
     """Test that dry-run mode works correctly."""
     result = golden_project
 
-    # Check that dry-run completed successfully
+    # Check that dry-run completed successfully (return code 0 for successful renames)
     assert result["dry_run_returncode"] == 0, (
         f"Dry-run failed: {result['dry_run_stderr']}"
     )

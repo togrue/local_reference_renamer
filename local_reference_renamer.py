@@ -217,11 +217,11 @@ def apply_renames(
     refs: Dict[Tuple[Path, str, str], List[Tuple[Path, int, int]]],
     *,
     dry_run: bool = False,
-) -> List[Tuple[Path, str, str]]:
+) -> Tuple[List[Tuple[Path, str, str]], bool]:
     """Batch‑rename local‑only symbols.
 
     Skips a rename if the intended *new* name already exists in that file and issues a warning.
-    Returns the list of successfully planned/applied renames.
+    Returns the list of successfully planned/applied renames and a boolean indicating if all renames were successful.
     """
     t0 = time.perf_counter()
     planned: List[Tuple[Path, str, str]] = []
@@ -267,7 +267,9 @@ def apply_renames(
         for w in warnings:
             print("  •", w)
 
-    return planned
+    # Return success status: True if no warnings (all renames successful), False if warnings (some skipped)
+    all_successful = len(warnings) == 0
+    return planned, all_successful
 
 
 class MultiSymbolRenamer(cst.CSTTransformer):
@@ -351,16 +353,21 @@ def main() -> int:
             if args.verbose:
                 print(f"Local-only: {name} in {path}")
 
-    print(
-        tabulate(table, headers=["Symbol", "Type", "Module", "Count"], tablefmt="grid")
+    table = tabulate(
+        table, headers=["Symbol", "Type", "Module", "Count"], tablefmt="grid"
     )
+    for line in table.split("\n"):
+        print(line)
 
     if args.rename_locals:
-        plan = apply_renames(definitions, refs, dry_run=args.dry_run)
+        plan, all_successful = apply_renames(definitions, refs, dry_run=args.dry_run)
         label = "Planned renames" if args.dry_run else "Applied renames"
         print(f"\n{label}:")
         for p, old, new in plan:
             print(f" - {old} -> {new} in {p.relative_to(root)}")
+
+        # Return 0 if all renames were successful, 1 if some were skipped
+        return 0 if all_successful else 1
 
     # # Print timing summary
     # print("\nTiming summary:")
@@ -369,7 +376,8 @@ def main() -> int:
     #     avg = total / count if count else 0
     #     print(f" {key}: total={total:.3f}s, count={count}, avg={avg:.4f}s")
 
-    return 0 if local_only else 1
+    # Without --rename-locals: return 0 if all symbols follow proper naming convention, 1 if there are violations
+    return 0 if not local_only else 1
 
 
 if __name__ == "__main__":

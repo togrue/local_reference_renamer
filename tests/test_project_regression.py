@@ -35,7 +35,9 @@ def test_project_scan_output():
         text=True,
     )
 
-    assert result.returncode == 0, f"Scan failed: {result.stderr}"
+    assert result.returncode == 1, (
+        f"Scan should find violations but returned {result.returncode}: {result.stderr}"
+    )
 
     output = result.stdout
 
