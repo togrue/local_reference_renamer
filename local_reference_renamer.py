@@ -297,14 +297,41 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description="Analyze and optionally rename local-only symbols."
     )
-    parser.add_argument("--root", type=Path, required=True)
-    parser.add_argument("sources", nargs="*", type=Path)
-    parser.add_argument("--rename-locals", action="store_true")
-    parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--verbose", action="store_true")
-    parser.add_argument("--funcs", action="store_true")
-    parser.add_argument("--globals", action="store_true")
-    parser.add_argument("--warn-unused", action="store_true")
+    parser.add_argument(
+        "--root", type=Path, required=True, help="Root directory to analyze"
+    )
+    parser.add_argument(
+        "sources",
+        nargs="*",
+        type=Path,
+        help="Specific source files or directories to analyze (default: all Python files)",
+    )
+    parser.add_argument(
+        "--rename-locals",
+        action="store_true",
+        help="Rename local-only symbols by prefixing with underscore",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Show what would be renamed without making changes",
+    )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Show detailed output including local-only symbols",
+    )
+    parser.add_argument(
+        "--funcs", action="store_true", help="Show only function definitions"
+    )
+    parser.add_argument(
+        "--globals", action="store_true", help="Show only global variable definitions"
+    )
+    parser.add_argument(
+        "--warn-unused",
+        action="store_true",
+        help="Warn about unused symbols (implies --verbose)",
+    )
     args = parser.parse_args()
 
     root = args.root.resolve()
